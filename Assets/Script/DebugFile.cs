@@ -14,6 +14,7 @@ public class DebugFile : MonoBehaviour
     void Update()
     {
         Debug.Log("Test");
+        transform.position = new Vector3(0, 0, 0);
     }
 }
 //hello
