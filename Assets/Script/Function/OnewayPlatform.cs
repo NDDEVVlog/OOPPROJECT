@@ -1,7 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerOneWayPlatform : MonoBehaviour
+public class OneWayPlatform : MonoBehaviour
 {
     private GameObject currentOneWayPlatform;
 
