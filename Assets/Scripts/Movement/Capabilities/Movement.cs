@@ -17,6 +17,7 @@ public class Movement : MonoBehaviour
 
 
     public Controller _controller;
+    public Dash dashSkill;
     public Vector2 _direction, _desiredVelocity, _velocity;
     private Rigidbody2D _body;
     private CollisionDataRecieve collisionData;
@@ -38,6 +39,7 @@ public class Movement : MonoBehaviour
         //WallInteractor = GetComponent<WallInteractor>();
         //if(GetComponent<Animator>()!=null)
         animator = GetComponent<Animator>();
+        dashSkill = GetComponent<Dash>();
     }
     private void Update()
     {
@@ -48,6 +50,14 @@ public class Movement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(_direction.x));
     }
     private void FixedUpdate()
+    {
+        if (!dashSkill.isDashing) {
+            Move();
+        }
+
+
+    }
+    private void Move()
     {
         _onGround = collisionData.OnGround;
 
@@ -83,7 +93,5 @@ public class Movement : MonoBehaviour
         _velocity.x = Mathf.MoveTowards(_velocity.x, _desiredVelocity.x, _maxSpeedChange);
 
         _body.velocity = _velocity;
-
-
     }
 }
