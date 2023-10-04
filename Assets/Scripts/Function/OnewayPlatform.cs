@@ -4,43 +4,56 @@ using UnityEngine;
 
 public class OnewayPlatform : MonoBehaviour
 {
-    private GameObject currentOneWayPlatform;
+    [SerializeField]
+    bool isCharacter = false;
 
-    [SerializeField] private Collider2D playerCollider;
+    
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        if (isCharacter)
         {
-            if (currentOneWayPlatform != null)
-            {   
-                StartCoroutine(DisableCollision());
+            if(Input.GetKeyDown(KeyCode.S)|| Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                if (GetComponent<PlatformEffector2D>())
+                {
+                    GetComponent<PlatformEffector2D>().rotationalOffset = 180f;
+                    StartCoroutine(OneWayTime());
+                }
             }
         }
     }
+    private void OnCollisionStay(Collision collision)
+    {
 
+        if (collision.gameObject.CompareTag("Character"))
+        {
+            isCharacter = true;
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("OneWayPlatform"))
+        // Get the collider not the parent
+        if (collision.gameObject.CompareTag("Character"))
         {
-            currentOneWayPlatform = collision.gameObject;
+            isCharacter = true;
         }
+    }
+    IEnumerator OneWayTime()
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        GetComponent<PlatformEffector2D>().rotationalOffset = 0f;
+
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("OneWayPlatform"))
+        if (collision.gameObject.CompareTag("Character"))
         {
-            currentOneWayPlatform = null;
+            isCharacter = false;
         }
     }
 
-    private IEnumerator DisableCollision()
-    {
-        Collider2D platformCollider = currentOneWayPlatform.GetComponent<Collider2D>();
-
-        Physics2D.IgnoreCollision(playerCollider, platformCollider);
-        yield return new WaitForSeconds(0.25f);
-        Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
-    }
 }

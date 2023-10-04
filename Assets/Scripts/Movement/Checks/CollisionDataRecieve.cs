@@ -60,7 +60,6 @@ public class CollisionDataRecieve : MonoBehaviour
             
             ContactNormal = collision.GetContact(i).normal;
             OnGround |= ContactNormal.y >= 0.85f;
-            if (OnGround) Debug.Log("Hello");
             OnWall = Mathf.Abs(ContactNormal.x) >= 0.9f;
             CheckCeiling |= ContactNormal.y >= 2f;
         }
