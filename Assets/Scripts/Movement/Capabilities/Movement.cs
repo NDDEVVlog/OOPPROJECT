@@ -37,7 +37,7 @@ public class Movement : MonoBehaviour
         _controller = GetComponent<Controller>();
         //WallInteractor = GetComponent<WallInteractor>();
         //if(GetComponent<Animator>()!=null)
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
     private void Update()
     {
