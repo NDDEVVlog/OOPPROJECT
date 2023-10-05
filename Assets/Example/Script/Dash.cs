@@ -54,8 +54,8 @@ public class Dash : MonoBehaviour
         
         if (isDashing)
         {
-            Rb.velocity = DashDir.normalized * DashSpeed;
-
+            Rb.velocity = new Vector2( DashDir.x * 150* Time.fixedDeltaTime,0);
+           // Rb.velocity = 
         }
 
     }
