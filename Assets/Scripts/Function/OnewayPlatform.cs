@@ -41,7 +41,7 @@ public class OnewayPlatform : MonoBehaviour
     }
     IEnumerator OneWayTime()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.5f);
 
         GetComponent<PlatformEffector2D>().rotationalOffset = 0f;
 
