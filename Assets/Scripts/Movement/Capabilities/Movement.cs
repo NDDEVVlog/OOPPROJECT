@@ -14,7 +14,19 @@ public class Movement : MonoBehaviour
     [SerializeField, Range(0f, 100f)] private float maxTurnSpeed = 35f;
     [SerializeField, Range(0f, 100f)] private float maxAirTurnSpeed = 20f;
 
-
+    public bool isFacingRight = true;
+    public bool IsFacingRight
+    {
+        get { return isFacingRight; }
+        private set
+        {
+            if(isFacingRight != value)
+            {
+                transform.localScale *= new Vector2(-1, 1);
+            }
+            isFacingRight = value;
+        }
+    }
 
     public Controller _controller;
     public Dash dashSkill;
@@ -48,6 +60,19 @@ public class Movement : MonoBehaviour
 
         _desiredVelocity = new Vector2(_direction.x, 0f) * Mathf.Max(_maxSpeed - collisionData.Friction, 0f);
         animator.SetFloat("Speed", Mathf.Abs(_direction.x));
+
+        #region SetFacingDirection
+        if (_direction.x > 0 && !IsFacingRight)
+        {
+            //face the Right
+            IsFacingRight = true;
+        }
+        else if (_direction.x < 0 && IsFacingRight)
+        {
+            //Face the left
+            IsFacingRight = false;
+        }
+        #endregion
     }
     private void FixedUpdate()
     {
