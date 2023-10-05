@@ -5708,7 +5708,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514259491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.829, y: 0.862, z: -10}
+  m_LocalPosition: {x: 1.829, y: 0.749, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7120,7 +7120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942084402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.829, y: 0.862, z: -10}
+  m_LocalPosition: {x: 1.829, y: 0.749, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7206,13 +7206,14 @@ GameObject:
   - component: {fileID: 947678098}
   - component: {fileID: 947678103}
   - component: {fileID: 947678106}
-  - component: {fileID: 947678105}
   - component: {fileID: 947678104}
-  - component: {fileID: 947678107}
   - component: {fileID: 947678108}
   - component: {fileID: 947678109}
   - component: {fileID: 947678111}
   - component: {fileID: 947678112}
+  - component: {fileID: 947678114}
+  - component: {fileID: 947678115}
+  - component: {fileID: 947678116}
   m_Layer: 0
   m_Name: Character
   m_TagString: Character
@@ -7280,7 +7281,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 947678097}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.829, y: 0.862, z: 0}
+  m_LocalPosition: {x: 1.829, y: 0.749, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7321,31 +7322,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnGround: 0
---- !u!114 &947678105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947678097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a9a448c818bb1e4395307169f60a3fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxSpeed: 1
-  _maxAcceleration: 35
-  _maxAirAcceleration: 20
-  _maxDeceleration: 35
-  _maxAirDeceleration: 20
-  maxTurnSpeed: 35
-  maxAirTurnSpeed: 20
-  _controller: {fileID: 0}
-  dashSkill: {fileID: 0}
-  _direction: {x: 0, y: 0}
-  _desiredVelocity: {x: 0, y: 0}
-  _velocity: {x: 0, y: 0}
-  animator: {fileID: 0}
 --- !u!96 &947678106
 TrailRenderer:
   serializedVersion: 2
@@ -7445,33 +7421,6 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &947678107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947678097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5f70217649e1eb4dac470dce4235b06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _jumpHeight: 1
-  _maxAirJumps: 0
-  _downwardMovementMultiplier: 2.83
-  _upwardMovementMultiplier: 0.39
-  _coyoteTime: 0.2
-  _jumpBufferTime: 0.2
-  _controller: {fileID: 0}
-  _velocity: {x: 0, y: 0}
-  _defaultGravityScale: 0
-  _jumpSpeed: 0
-  _coyoteCounter: 0
-  _jumpBufferCounter: 0
-  _desiredJump: 0
-  _onGround: 0
-  isJumping: 0
 --- !u!70 &947678108
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -7533,10 +7482,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bbc28d733d7ecf48b2157a7cae97aef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DashSpeed: 3
+  DashSpeed: 100
   DashingTime: 0.5
   isDashing: 0
   canDash: 1
+--- !u!61 &947678114
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947678097}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.013403356, y: 0.0026806593}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.8}
+    newSize: {x: 0.64, y: 0.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.20573318, y: 0.4836825}
+  m_EdgeRadius: 0
+--- !u!114 &947678115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947678097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 254f4408707cec049a4468b89ee7297e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &947678116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947678097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a9a448c818bb1e4395307169f60a3fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxSpeed: 1
+  _maxAcceleration: 35
+  _maxAirAcceleration: 20
+  _maxDeceleration: 35
+  _maxAirDeceleration: 20
+  maxTurnSpeed: 35
+  maxAirTurnSpeed: 20
+  isFacingRight: 1
+  _controller: {fileID: 0}
+  dashSkill: {fileID: 0}
+  _direction: {x: 0, y: 0}
+  _desiredVelocity: {x: 0, y: 0}
+  _velocity: {x: 0, y: 0}
+  animator: {fileID: 0}
 --- !u!1001 &952415848
 PrefabInstance:
   m_ObjectHideFlags: 0
