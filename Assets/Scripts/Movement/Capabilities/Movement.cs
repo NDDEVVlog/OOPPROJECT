@@ -38,10 +38,13 @@ public class Movement : MonoBehaviour
     private float _maxSpeedChange, _acceleration;
     private float _deceleration, turnSpeed;
     private bool _onGround;
+   
 
 
 
-   // private WallInteractor WallInteractor;
+
+
+    // private WallInteractor WallInteractor;
 
     private void Awake()
     {
@@ -97,6 +100,10 @@ public class Movement : MonoBehaviour
         //Adjust the velocity in horizontal 
         if (_direction.x != 0)
         {
+            //activate sound 
+            FindObjectOfType<AudioManager>().Play("FootStep");
+            
+
             if (Mathf.Sign(_direction.x) != Mathf.Sign(_velocity.x))
             {
                 _maxSpeedChange = turnSpeed * Time.deltaTime;
@@ -105,12 +112,14 @@ public class Movement : MonoBehaviour
             {
                 _maxSpeedChange = _acceleration * Time.deltaTime;
             }
+           
         }
         else
         {
             _maxSpeedChange = _deceleration * Time.deltaTime;
         }
         _maxSpeedChange = _acceleration * Time.deltaTime;
+        
 
 
 
