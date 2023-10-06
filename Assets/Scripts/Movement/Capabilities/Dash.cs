@@ -16,7 +16,7 @@ public class Dash : MonoBehaviour
     public bool IsMoving { get; private set; }
     public bool isDashing = false;
     public bool canDash = true;
-
+   
 
     // Start is called before the first frame update
 
@@ -27,6 +27,8 @@ public class Dash : MonoBehaviour
 
     void Start()
     {
+        
+
         controll = GetComponent<Controller>();
     }
 
@@ -40,7 +42,9 @@ public class Dash : MonoBehaviour
 
             isDashing = true;
             canDash = false;
-            DashDir = new Vector2(MoveInput.x, 0);
+            DashDir = new Vector2(MoveInput.x, 0.08f);
+        
+            
             if (DashDir == Vector2.zero)
             {
                 DashDir = new Vector2(transform.localScale.x,0 );
@@ -54,7 +58,7 @@ public class Dash : MonoBehaviour
         
         if (isDashing)
         {
-            Rb.velocity = new Vector2( DashDir.x * 150* Time.fixedDeltaTime,0);
+            Rb.velocity = new Vector2( DashDir.x * 150* Time.fixedDeltaTime, DashDir.y * 150 * Time.fixedDeltaTime);
            // Rb.velocity = 
         }
 
@@ -64,6 +68,10 @@ public class Dash : MonoBehaviour
         yield return new WaitForSeconds(DashingTime);
         isDashing = false;
         canDash = true;
+        
+        
+
+
     }
 
     /*public void OnDash(InputAction.CallbackContext context)

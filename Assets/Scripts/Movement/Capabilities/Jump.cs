@@ -21,7 +21,7 @@ public class Jump : MonoBehaviour
     public float _defaultGravityScale, _jumpSpeed, _coyoteCounter, _jumpBufferCounter;
 
     public bool _desiredJump, _onGround, isJumping;
-
+    public bool doubleJump = true;
 
     // Start is called before the first frame update
     void Awake()
@@ -46,6 +46,7 @@ public class Jump : MonoBehaviour
 
         if (_onGround)// && _body.velocity.y ==0)
         {
+            doubleJump = true;
             _jumpPhase = 0;
             _coyoteCounter = _coyoteTime;
             isJumping = false;
@@ -89,8 +90,9 @@ public class Jump : MonoBehaviour
     private void JumpAction()
     {
 
-        if (_coyoteCounter >= 0 || (_jumpPhase < _maxAirJumps && isJumping))
+        if (_coyoteCounter >= 0 || (_jumpPhase < _maxAirJumps && isJumping) || doubleJump)
         {
+            if (doubleJump) doubleJump = !doubleJump;
             if (isJumping)
             {
                 _jumpPhase += 1;
