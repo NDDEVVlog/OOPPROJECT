@@ -26,7 +26,7 @@ public class jump2 : MonoBehaviour
             animator.SetBool("isJumping", true);
             playerRb.AddForce(Vector2.up * 250);
         }
-        if (collisiondataretrieve.OnGround == true)
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             animator.SetBool("isJumping", false);
         }
