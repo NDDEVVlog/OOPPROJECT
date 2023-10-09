@@ -100,8 +100,7 @@ public class Movement : MonoBehaviour
         //Adjust the velocity in horizontal 
         if (_direction.x != 0)
         {
-            //activate sound 
-            FindObjectOfType<AudioManager>().Play("FootStep");
+          
             
 
             if (Mathf.Sign(_direction.x) != Mathf.Sign(_velocity.x))

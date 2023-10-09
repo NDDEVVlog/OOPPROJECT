@@ -7214,6 +7214,7 @@ GameObject:
   - component: {fileID: 947678114}
   - component: {fileID: 947678115}
   - component: {fileID: 947678116}
+  - component: {fileID: 947678118}
   - component: {fileID: 947678117}
   m_Layer: 0
   m_Name: Character
@@ -7561,15 +7562,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: 8a35b01618e88754580b32d65af771d9, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 22
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -7647,6 +7648,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &947678118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947678097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2220107e07ee78f48b33480ccf0c5071, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  run: {fileID: 947678117}
 --- !u!1001 &952415848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7797,7 +7811,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1004419072}
-  - component: {fileID: 1004419071}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -7805,24 +7818,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1004419071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004419070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69db214a978ed7b4fa7aee045abd806a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: FootStep
-    clip: {fileID: 8300000, guid: 8a35b01618e88754580b32d65af771d9, type: 3}
-    volume: 1
-    pitch: 1
-    source: {fileID: 0}
 --- !u!4 &1004419072
 Transform:
   m_ObjectHideFlags: 0
