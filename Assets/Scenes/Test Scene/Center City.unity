@@ -5206,7 +5206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 176049062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4, y: 1.35, z: 0}
+  m_LocalPosition: {x: 7.78, y: 1.02, z: 0}
   m_LocalScale: {x: 1.1585, y: 1.1585, z: 1.1585}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5330,7 +5330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6dc8447aaba88646ab73fb6e23f9148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 947678099}
+  target: {fileID: 284810920}
   activateDistance: 50
   pathUpdateSeconds: 0.5
   nextWayPointDistance: 3
@@ -5393,11 +5393,11 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 129
   m_RotationalOffset: -180
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 90
+  m_SurfaceArc: 270
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -6114,7 +6114,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514259491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.829, y: 1.6819999, z: -10}
+  m_LocalPosition: {x: 8.55, y: 3.96, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7941,7 +7941,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942084402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.829, y: 1.6819999, z: -10}
+  m_LocalPosition: {x: 8.55, y: 3.96, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9969,7 +9969,7 @@ GameObject:
   - component: {fileID: 1350719363}
   - component: {fileID: 1350719362}
   - component: {fileID: 1350719361}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: esplanade with grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11791,11 +11791,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5154991568264101733, guid: b300c1fc186c11f4699ffcc36305d64b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.829
+      value: 8.55
       objectReference: {fileID: 0}
     - target: {fileID: 5154991568264101733, guid: b300c1fc186c11f4699ffcc36305d64b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.862
+      value: 3.14
       objectReference: {fileID: 0}
     - target: {fileID: 5154991568264101733, guid: b300c1fc186c11f4699ffcc36305d64b, type: 3}
       propertyPath: m_LocalPosition.z
