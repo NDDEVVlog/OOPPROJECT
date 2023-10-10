@@ -76,7 +76,7 @@ public class Jump : MonoBehaviour
         }
         else if (!_controller.input.RetrieveJumpHoldInput() || _body.velocity.y < 0)
         {
-            Debug.Log("in code");
+            
             _body.gravityScale = _downwardMovementMultiplier;
         }
         else if (_body.velocity.y == 0)
