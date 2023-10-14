@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyHp : MonoBehaviour
 {
+    [SerializeField] private SimpleFlash flashTrigger;
     //public Animator animator;
 
     private int maxHealth = 100;
@@ -16,6 +17,7 @@ public class EnemyHp : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        flashTrigger.Flash();
         //animator.SetTrigger("Hurt");
         if(currentHealth == 0)
         {
