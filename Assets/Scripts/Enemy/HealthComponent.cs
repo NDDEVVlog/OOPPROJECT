@@ -1,34 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class EnemyHp : MonoBehaviour
+   
+[RequireComponent(typeof(SimpleFlash))]
+public class HealthComponent : MonoBehaviour
 {
-    [SerializeField] private SimpleFlash flashTrigger;
+    [SerializeField] protected SimpleFlash flashTrigger;
     //public Animator animator;
 
     private int maxHealth = 100;
-    private int currentHealth;
+    private float currentHealth;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        flashTrigger = GetComponent<SimpleFlash>();
     }
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(float damage)
     {
         currentHealth -= damage;
         flashTrigger.Flash();
+        Debug.Log("Hit");
+
         //animator.SetTrigger("Hurt");
-        if(currentHealth == 0)
+        if (currentHealth == 0)
         {
             Die();
         }
     }
     void Die()
     {
-        Debug.Log("Dummy die");
-        //animator.SetBool("isDeath", true);
+        
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
     }
+
+
+
 }

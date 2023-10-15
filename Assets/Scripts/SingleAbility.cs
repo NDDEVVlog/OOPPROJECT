@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMelee : MonoBehaviour
+public class SingleAbility : MonoBehaviour
 {
     public Animator animator;
     public Transform attackLocation;
@@ -12,6 +12,13 @@ public class PlayerMelee : MonoBehaviour
     public int attackDamage = 1;
     public float attackRate = 2f;
     private float nextAttackTime = 0f;
+    public KeyCode code;
+    public AnimationClip attack;
+
+    public void Start()
+    {
+ 
+    }
     // Update is called once per frame
     void Update()
     {
@@ -19,20 +26,24 @@ public class PlayerMelee : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
-                Attack();
+                //Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
+                animator.Play(attack.name, GetComponent<SpriteRenderer>().sortingLayerID);
             }
         }
     }
     void Attack()
     {
-        animator.SetTrigger("Attack");//play attack animation
+
+      
+        
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackLocation.position, attackRange, enemyLayers);//create and detect enemy in range
 
+
         foreach (Collider2D enemy in hitEnemies)//hit points
         {
-            enemy.GetComponent<EnemyHp>().TakeDamage(attackDamage);
+            enemy.GetComponent<HealthComponent>().TakeDamage(attackDamage);
         }
     }
     private void OnDrawGizmosSelected()
