@@ -23,6 +23,7 @@ public class Jump : MonoBehaviour
     public bool _desiredJump, _onGround, isJumping;
     public bool doubleJump = true;
 
+    public Animator animator;
     // Start is called before the first frame update
     void Awake()
     {
@@ -73,11 +74,12 @@ public class Jump : MonoBehaviour
         if (_controller.input.RetrieveJumpHoldInput() && _body.velocity.y > 0)
         {
             _body.gravityScale = _upwardMovementMultiplier;
+            animator.SetBool("isJumping", true);
         }
         else if (!_controller.input.RetrieveJumpHoldInput() || _body.velocity.y < 0)
         {
-            
             _body.gravityScale = _downwardMovementMultiplier;
+            animator.SetBool("isJumping", false);
         }
         else if (_body.velocity.y == 0)
         {
