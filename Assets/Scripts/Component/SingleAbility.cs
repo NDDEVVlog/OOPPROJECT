@@ -15,16 +15,20 @@ public class SingleAbility : MonoBehaviour
     public KeyCode code;
     public AnimationClip attack;
 
+    public BaseSingleAbilitySkill[] baseSkill;
+
+    public PlayerController controller;
+
     public void Start()
     {
- 
+        controller= GetComponent<PlayerController>();
     }
     // Update is called once per frame
     void Update()
     {
         if(Time.time >= nextAttackTime)
         {
-            if (Input.GetKeyDown(KeyCode.X))
+            if (controller.RetriecveCustomInput(code))
             {
                 //Attack();
                 nextAttackTime = Time.time + 1f / attackRate;

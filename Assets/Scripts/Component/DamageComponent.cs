@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 namespace Damage{
-    public class DamageComponent : MonoBehaviour
+    public static class DamageComponent
     {
 
         public delegate void ApplyDamage(DamageInfo damageInfo) ;
@@ -13,14 +13,7 @@ namespace Damage{
         public static event EventHandler<float> TakenDamage;
         
 
-        public void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                
-            }
-
-        }
+       
 
         public static void ApplyPointDamage(Damage.PointDamageInfor pointDamageInfor)
         {

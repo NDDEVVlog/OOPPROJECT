@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PlayerController", menuName = "InputController/PlayerController")]
+
 public class PlayerController : InputController
 {
     public override bool RetrieveJumpInput()
@@ -18,5 +18,9 @@ public class PlayerController : InputController
     {
         return Input.GetButton("Jump");
     }
-    
+    public override bool RetriecveCustomInput(KeyCode code)
+    {
+        return Input.GetKeyDown(code);
+    }
+
 }

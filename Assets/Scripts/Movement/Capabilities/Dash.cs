@@ -45,9 +45,9 @@ public class Dash : MonoBehaviour
             DashDir = new Vector2(MoveInput.x, 0.08f);
         
             
-            if (DashDir == Vector2.zero)
+            if (DashDir.x == Vector2.zero.x)
             {
-                DashDir = new Vector2(transform.localScale.x,0 );
+                DashDir = new Vector2(transform.localScale.x,0.08f );
             }
             StartCoroutine(StopDashing());
         }

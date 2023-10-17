@@ -29,6 +29,10 @@ public class KiritoFakeAIController : InputController
             return false;
             //throw new System.NotImplementedException();
         }
- 
-   
+
+    public override bool RetriecveCustomInput(KeyCode code)
+    {
+        throw new System.NotImplementedException();
+    }
+
 }

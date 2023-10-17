@@ -79,9 +79,10 @@ public class Movement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (!dashSkill.isDashing) {
+        
+        
             Move();
-        }
+        
 
 
     }
