@@ -6,6 +6,7 @@ public class DummyHealth : HealthComponent
 {
     public override void TakeDamage(float damage)
     {
+        
         flashTrigger.Flash();
         Debug.Log("DummyHit");
     }

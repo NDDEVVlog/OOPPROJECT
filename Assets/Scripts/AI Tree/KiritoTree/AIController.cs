@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class KiritoFakeAIController : InputController
+public class AIController : InputController
 {
     public float xValue = 0;
     // Start is called before the first frame update

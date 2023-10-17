@@ -10,6 +10,7 @@ public class HealthComponent : MonoBehaviour
 
     private int maxHealth = 100;
     private float currentHealth;
+    protected string Name;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +24,12 @@ public class HealthComponent : MonoBehaviour
         Debug.Log("Hit");
 
         //animator.SetTrigger("Hurt");
-        if (currentHealth == 0)
+        if (currentHealth <= 0)
         {
             Die();
         }
     }
-    void Die()
+    public virtual void Die()
     {
         
         GetComponent<Collider2D>().enabled = false;

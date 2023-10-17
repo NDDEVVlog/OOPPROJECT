@@ -24,7 +24,7 @@ public class NPCBT : MonoBehaviour
     private int currentWaypoint = 0;
     CollisionDataRecieve collisionDataRecieve;
     Seeker seeker;
-    public KiritoFakeAIController controller;
+    public AIController controller;
     
 
     public void Awake()
