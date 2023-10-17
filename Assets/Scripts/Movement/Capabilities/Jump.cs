@@ -30,7 +30,7 @@ public class Jump : MonoBehaviour
         _body = GetComponent<Rigidbody2D>();
         _ground = GetComponent<CollisionDataRecieve>();
         _controller = GetComponent<Controller>();
-
+        animator = GetComponent<Animator>();
         _defaultGravityScale = 1f;
     }
 

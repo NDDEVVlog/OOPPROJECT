@@ -8341,7 +8341,6 @@ GameObject:
   - component: {fileID: 947678108}
   - component: {fileID: 947678109}
   - component: {fileID: 947678111}
-  - component: {fileID: 947678112}
   - component: {fileID: 947678110}
   - component: {fileID: 947678120}
   - component: {fileID: 947678121}
@@ -8593,7 +8592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f70217649e1eb4dac470dce4235b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpHeight: 1.25
+  _jumpHeight: 0.8
   _maxAirJumps: 0
   _downwardMovementMultiplier: 1.26
   _upwardMovementMultiplier: 0.39
@@ -8609,6 +8608,7 @@ MonoBehaviour:
   _onGround: 0
   isJumping: 0
   doubleJump: 1
+  animator: {fileID: 0}
 --- !u!70 &947678108
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -8684,22 +8684,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &947678112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947678097}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bbc28d733d7ecf48b2157a7cae97aef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DashSpeed: 3
-  DashingTime: 0.5
-  isDashing: 0
-  canDash: 1
 --- !u!114 &947678120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10947,9 +10931,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -5
+  m_SortingOrder: -6
   m_Sprite: {fileID: 21300000, guid: 22adcfc00db68d2429d91c231afede4f, type: 3}
-  m_Color: {r: 0.41374153, g: 0.4520441, b: 0.49056602, a: 1}
+  m_Color: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
