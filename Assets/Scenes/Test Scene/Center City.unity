@@ -5160,7 +5160,6 @@ GameObject:
   - component: {fileID: 176049068}
   - component: {fileID: 176049067}
   - component: {fileID: 176049070}
-  - component: {fileID: 176049071}
   - component: {fileID: 176049073}
   - component: {fileID: 176049072}
   - component: {fileID: 176049075}
@@ -5347,22 +5346,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &176049071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 176049062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bbc28d733d7ecf48b2157a7cae97aef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DashSpeed: 12
-  DashingTime: 0.5
-  isDashing: 0
-  canDash: 1
 --- !u!114 &176049072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8084,6 +8067,7 @@ GameObject:
   - component: {fileID: 947678120}
   - component: {fileID: 947678121}
   - component: {fileID: 947678131}
+  - component: {fileID: 947678132}
   m_Layer: 3
   m_Name: Character
   m_TagString: Character
@@ -8398,10 +8382,8 @@ MonoBehaviour:
   code: 120
   attack: {fileID: 7400000, guid: a68c32e8bfe86fc41a0820d2fc42f37b, type: 2}
   baseSkill:
-  - keyCode: 0
-    clip: {fileID: 0}
-  - keyCode: 0
-    clip: {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   controller: {fileID: 0}
 --- !u!95 &947678111
 Animator:
@@ -8430,7 +8412,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 947678097}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bbc28d733d7ecf48b2157a7cae97aef, type: 3}
   m_Name: 
@@ -8478,6 +8460,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4566d3cddb861340bc4ef8e7b1538a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &947678132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947678097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf222e4dd91d71489fe67d7c8257775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilitySkill: {fileID: 11400000, guid: 87368e4072eda3049b86858da3fdd79a, type: 2}
+  keyCode: 99
 --- !u!1001 &952415848
 PrefabInstance:
   m_ObjectHideFlags: 0
