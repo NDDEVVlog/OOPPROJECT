@@ -28,9 +28,8 @@ public class HealthComponent : MonoBehaviour
             Die();
         }
     }
-    void Die()
+    public void Die()
     {
-        
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
     }

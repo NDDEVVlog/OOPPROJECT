@@ -31,7 +31,7 @@ public class SingleAbility : MonoBehaviour
         {
             if (controller.RetriecveCustomInput(code))
             {
-                //Attack();
+                Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
                 animator.Play(attack.name, GetComponent<SpriteRenderer>().sortingLayerID);
             }
@@ -39,13 +39,7 @@ public class SingleAbility : MonoBehaviour
     }
     void Attack()
     {
-
-      
-        
-
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackLocation.position, attackRange, enemyLayers);//create and detect enemy in range
-
-
         foreach (Collider2D enemy in hitEnemies)//hit points
         {
             enemy.GetComponent<HealthComponent>().TakeDamage(attackDamage);

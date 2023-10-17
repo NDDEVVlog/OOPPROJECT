@@ -8320,7 +8320,7 @@ MonoBehaviour:
   _upwardMovementMultiplier: 0.39
   _coyoteTime: 0.2
   _jumpBufferTime: 0.2
-  _controller: {fileID: 0}
+  _controller: {fileID: 947678109}
   _velocity: {x: 0, y: 0}
   _defaultGravityScale: 0
   _jumpSpeed: 0
@@ -8330,6 +8330,7 @@ MonoBehaviour:
   _onGround: 0
   isJumping: 0
   doubleJump: 1
+  animator: {fileID: 947678111}
 --- !u!70 &947678108
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -12196,7 +12197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9057ab9b885723244a86c64e09a85638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashTrigger: {fileID: 0}
+  flashTrigger: {fileID: 1782280912}
 --- !u!1001 &1942045034
 PrefabInstance:
   m_ObjectHideFlags: 0
