@@ -20,9 +20,14 @@ public class BirdAI : BehaviorTree.Tree
 
         // Create a selector node to choose between flying and landing
         Selector flyOrLand = new Selector(new List<Node> { flyNode, landNode });
+        //  --> Node Check position has bird or not  ( Physic2D.OverLapShpere) ->Check overlap has tag (bird)
+        //land --> MoveToward 
+        //
+
+
 
         // Create a sequence node to fly, then land, then wait
-        SequenceOrder sequence = new SequenceOrder(new List<Node> { landNode, waitNode, flyNode });
+        Selector sequence = new Selector(new List<Node> { landNode, waitNode, flyNode });
 
         // Return the root node
         return sequence;

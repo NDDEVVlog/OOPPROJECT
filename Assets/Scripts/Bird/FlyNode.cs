@@ -19,8 +19,16 @@ public class FlyNode : Node
         // Move the bird across the screen
         bird.transform.position += Vector3.right * speed * Time.deltaTime;
 
+        //MoveToward TO POSITION
+
+        //RandomPoistion in Range
+        //y = sin(X)+k
+
+        //  Has an if (Bird == position ) 
+
+
         // If the bird has reached the other side of the screen, return SUCCESS
-        if (bird.transform.position.x > Screen.width)
+        if (bird.transform.position.x > 30f)
         {
             return NodeState.SUCCESS;
         }

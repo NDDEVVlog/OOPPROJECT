@@ -21,6 +21,7 @@ public class LandNode : Node
 
         // Move the bird to the landing spot
         bird.transform.position = landingSpot.transform.position;
+        //Teleport -> MoveToward
 
         return NodeState.SUCCESS;
     }

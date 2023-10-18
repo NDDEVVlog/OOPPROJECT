@@ -20,7 +20,7 @@ public class Bird : MonoBehaviour
     }
 
     private void Update()
-    {
+    {/*
         if (isFlying)
         {
             // Move towards the target position.
@@ -47,7 +47,7 @@ public class Bird : MonoBehaviour
         {
             // If the bird is not flying, wait for a random amount of time before setting isFlying to true.
             StartCoroutine(Wait(Random.Range(minWaitTime, maxWaitTime)));
-        }
+        }*/
     }
 
     private IEnumerator Wait(float seconds)
