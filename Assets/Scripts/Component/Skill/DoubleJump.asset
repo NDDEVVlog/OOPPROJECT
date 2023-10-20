@@ -9,15 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d362c4d637980e945a832b8ce3075bf3, type: 3}
-  m_Name: DashAbility
+  m_Script: {fileID: 11500000, guid: 8e9e4fd330a82e849959f38924380e52, type: 3}
+  m_Name: DoubleJump
   m_EditorClassIdentifier: 
-  keyCode: 99
+  keyCode: 118
   clip: {fileID: 0}
-  name: Dash
-  coolDownTime: 1.5
-  activeTime: 0.2
+  name: 
+  coolDownTime: -0.00024771784
+  activeTime: -0.0010468003
+  tempActiveTime: 0.005
+  tempCoolDownTime: 3
   DashSpeed: 12
   DashingTime: 0.5
+  holdingTime: 1.5
   isDashing: 0
   canDash: 1
+  jumpScript: {fileID: 0}

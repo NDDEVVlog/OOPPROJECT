@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu]
+[System.Serializable]
 public class DashAbility : BaseSingleAbilitySkill
 {
     Vector2 MoveInput;
@@ -10,6 +10,9 @@ public class DashAbility : BaseSingleAbilitySkill
     public float DashSpeed = 12f;
     public float DashingTime = 0.5f;
     Controller controll;
+
+    
+    
 
     public bool IsMoving { get; private set; }
     public bool isDashing = false;
@@ -27,14 +30,22 @@ public class DashAbility : BaseSingleAbilitySkill
         }
         
         Rb.velocity = new Vector2(DashDir.x * 250* Time, DashDir.y * 150*Time);
-
+        
     }
+    
     public override void AssignVariable(GameObject parent)
     {
+
+        base.AssignVariable(parent);
         controll = parent.GetComponent<Controller>();
         Rb = parent.GetComponent<Rigidbody2D>();
         
-
     }
 
+    public override bool ReturnInputValue(float Time)
+    {
+        return controll.input.RetriecveCustomInput(keyCode);
+    }
+
+   
 }

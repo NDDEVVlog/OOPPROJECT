@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class AbilityHolder : MonoBehaviour
 {
-    public BaseSingleAbilitySkill abilitySkill;
-    float coolDowTime;
-    float activeTime;
+    public BaseSingleAbilitySkill[] abilitySkill;
+    
     
     enum AbilityState
     {
@@ -21,16 +20,22 @@ public class AbilityHolder : MonoBehaviour
     public KeyCode keyCode;
     private void Awake()
     {
-        keyCode = abilitySkill.keyCode;
-        abilitySkill.AssignVariable(this.gameObject);
+        foreach (BaseSingleAbilitySkill a in abilitySkill)
+        {
+            keyCode = a.keyCode;
+            a.AssignVariable(this.gameObject);
+        }
     }
     private void Update()
     {
-        switch (state)
+        foreach (BaseSingleAbilitySkill a in abilitySkill)
+            a.Check(Time.deltaTime,Time.fixedDeltaTime,this.gameObject);
+        /*switch (state)
         {
             case AbilityState.ready:
-                if (Input.GetKeyDown(keyCode))
+                if (abilitySkill.ReturnInputValue(Time.deltaTime))
                 {
+                    Debug.Log("hi");
                     abilitySkill.Activate(this.gameObject);
                     state = AbilityState.active;
                     activeTime = abilitySkill.activeTime;
@@ -56,11 +61,12 @@ public class AbilityHolder : MonoBehaviour
                 }
                 else
                 {
+                    abilitySkill.Deactivate();
                     state = AbilityState.ready;
 
                 }
                 break;
-        }
+        }*/
        
     }
 }
