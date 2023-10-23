@@ -29,13 +29,16 @@ public class WaitNode : Node
         return state;*/
 
         _WaitCounter += Time.deltaTime;
+
         if (_WaitCounter >= waitTime)
         {
-            _WaitCounter = 0;
+            _WaitCounter = 0; // Reset counter
 
+            waitTime = Random.Range(bird.minWaitTime, bird.maxWaitTime); // Set next wait time
 
             return NodeState.SUCCESS;
         }
+
         return NodeState.RUNNING;
     }
 
