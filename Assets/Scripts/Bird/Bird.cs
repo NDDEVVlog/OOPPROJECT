@@ -8,6 +8,8 @@ public class Bird : MonoBehaviour
     public GameObject[] landingSpots; // An array of possible landing spots.
     public float minWaitTime = 1f; // The minimum amount of time the bird will wait at a spot.
     public float maxWaitTime = 5f; // The maximum amount of time the bird will wait at a spot.
+    public bool IsLanding { get; set; }
+    public GameObject CurrentLandingSpot { get; set; }
 
 
     private Vector3 targetPosition; // The current target position (either a landing spot or the other side of the screen).
