@@ -31,7 +31,7 @@ public class SingleAbility : MonoBehaviour
         {
             if (controller.RetriecveCustomInput(code))
             {
-                Attack();
+                //Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
                 animator.Play(attack.name, GetComponent<SpriteRenderer>().sortingLayerID);
             }

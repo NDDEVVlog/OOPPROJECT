@@ -17,7 +17,7 @@ public class BasicEnemyBT : BehaviorTree.Tree
         //GetComponent<Control.Controller>().input;
         Node root = new SequenceOrder(new List<Node>
         {
-            new TaskPatrol(layer, 0.8f, 0.1f, this.gameObject, ai),
+            new TaskPatrol(layer, 0.6f, 0.1f, this.gameObject, ai),
             new TaskWaitTime(),
 
         }) ;

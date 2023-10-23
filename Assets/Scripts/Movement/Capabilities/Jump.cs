@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-    [SerializeField, Range(0f, 10f)] private float _jumpHeight = 3f;
+    [SerializeField, Range(0f, 10f)] public float _jumpHeight = 3f;
     [SerializeField, Range(0, 5)] private int _maxAirJumps = 0;
     [SerializeField, Range(0f, 5f)] private float _downwardMovementMultiplier = 3f;
-    [SerializeField, Range(0f, 5f)] private float _upwardMovementMultiplier = 1.7f;
+    [SerializeField, Range(0f, 5f)] public float _upwardMovementMultiplier = 1.7f;
     [SerializeField, Range(0f, 0.3f)] private float _coyoteTime = 0.2f;
     [SerializeField, Range(0f, 0.3f)] private float _jumpBufferTime = 0.2f;
 
@@ -16,7 +16,7 @@ public class Jump : MonoBehaviour
     private Rigidbody2D _body;
     private CollisionDataRecieve _ground;
     public Vector2 _velocity;
-
+    public bool isDoubleJumpAcquire = false;
     private int _jumpPhase;
     public float _defaultGravityScale, _jumpSpeed, _coyoteCounter, _jumpBufferCounter;
 
@@ -69,7 +69,11 @@ public class Jump : MonoBehaviour
         }
 
         if (_jumpBufferCounter > 0)
-            JumpAction();
+        {
+            if (!isDoubleJumpAcquire)
+                JumpAction();
+            else DoubleJump();
+        }
 
         if (_controller.input.RetrieveJumpHoldInput() && _body.velocity.y > 0)
         {
@@ -92,6 +96,48 @@ public class Jump : MonoBehaviour
     private void JumpAction()
     {
 
+        if (_coyoteCounter >= 0 || (_jumpPhase < _maxAirJumps && isJumping))
+        {
+            
+            if (isJumping)
+            {
+                _jumpPhase += 1;
+            }
+
+            _jumpBufferCounter = 0;
+            _coyoteCounter = 0;
+            _jumpSpeed = Mathf.Sqrt(-2f * Physics2D.gravity.y * _jumpHeight * _upwardMovementMultiplier);
+            isJumping = true;
+
+            if (_velocity.y > 0f)
+            {
+                _jumpSpeed = Mathf.Max(_jumpSpeed - _velocity.y, 0f);
+            }
+            else if (_velocity.y < 0f)
+            {
+                _jumpSpeed += Mathf.Abs(_body.velocity.y);
+            }
+            _velocity.y += _jumpSpeed;
+
+        }
+    }
+    public void JumpFunc()
+    {
+        _jumpSpeed = Mathf.Sqrt(-2f * Physics2D.gravity.y * _jumpHeight * _upwardMovementMultiplier);
+        isJumping = true;
+
+        if (_velocity.y > 0f)
+        {
+            _jumpSpeed = Mathf.Max(_jumpSpeed - _velocity.y, 0f);
+        }
+        else if (_velocity.y < 0f)
+        {
+            _jumpSpeed += Mathf.Abs(_body.velocity.y);
+        }
+        _velocity.y += _jumpSpeed;
+    }
+    public void DoubleJump()
+    {
         if (_coyoteCounter >= 0 || (_jumpPhase < _maxAirJumps && isJumping) || doubleJump)
         {
             if (doubleJump) doubleJump = !doubleJump;
