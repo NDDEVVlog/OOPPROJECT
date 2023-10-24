@@ -8,6 +8,7 @@ public class VaseHealth : HealthComponent
     public Sprite another;
     public override void Die()
     {
+
         GetComponent<SpriteRenderer>().sprite = another;   
     }
     // Start is called before the first frame update

@@ -29,7 +29,7 @@ namespace BehaviorTree
                         return state;
                     case NodeState.RUNNING:
                         state = NodeState.RUNNING;
-                        continue;
+                        return state;
                     default:
                         continue;
 
