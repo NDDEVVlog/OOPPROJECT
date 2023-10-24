@@ -5,15 +5,17 @@ using BehaviorTree;
 
 public class WaitNode : Node
 {
-    private Bird bird;
+
     private float waitTime;
     private float _WaitCounter = 0;
     private MonoBehaviour monoBehaviour;
     private bool isWaiting = false;
+    float minWaitTime = 4f;
+    float maxWaitTime = 10f;
 
-    public WaitNode(Bird bird, float waitTime, MonoBehaviour monoBehaviour)
+    public WaitNode( float waitTime, MonoBehaviour monoBehaviour)
     {
-        this.bird = bird;
+        
         this.waitTime = waitTime;
         this.monoBehaviour = monoBehaviour;
     }
@@ -34,7 +36,7 @@ public class WaitNode : Node
         {
             _WaitCounter = 0; // Reset counter
 
-            waitTime = Random.Range(bird.minWaitTime, bird.maxWaitTime); // Set next wait time
+            waitTime = Random.Range(minWaitTime,maxWaitTime); // Set next wait time
 
             return NodeState.SUCCESS;
         }

@@ -4,28 +4,31 @@ using UnityEngine;
 
 public class BirdAI : BehaviorTree.Tree
 {
-    private Bird bird;
+
     public float checkRadius; // Radius for checking birds
     public LayerMask birdLayer; // Layer on which the birds are
-
+    public GameObject[] landingSpots;
+    bool isLanding = false;
     private void Awake()
     {
-        bird = GetComponent<Bird>();
+        
     }
 
     protected override Node SetupTree()
     {
         // Create nodes for each behavior
-        FlyNode flyNode = new FlyNode(bird, 5f, 5f, 0.5f);
-        LandNode landNode = new LandNode(bird, bird.landingSpots, 5f);
-        WaitNode waitNode = new WaitNode(bird, 3f, this);
+        FlyNode flyNode = new FlyNode(this.gameObject, 5f, 1f, 0.5f);
+        LandNode landNode = new LandNode(this.gameObject, landingSpots, 5f, isLanding);
+        WaitNode waitNode = new WaitNode(3f, this);
 
         // Create a selector node to choose between flying and landing
 
-        // Create a CheckBirdNode
-        CheckBirdNode checkBirdNode = new CheckBirdNode(1f, LayerMask.GetMask("Bird"));
+        // Create a CheckBirdNode   
+        CheckBirdNode checkBirdNode = new CheckBirdNode(1f, LayerMask.GetMask("Bird"),landingSpots);
 
+        SequenceOrder LandDing = new SequenceOrder(new List<Node> { landNode, waitNode });
 
+        SequenceOrder checkBird = new SequenceOrder(new List<Node> { checkBirdNode,LandDing });
 
         //land --> MoveToward 
 
@@ -33,9 +36,10 @@ public class BirdAI : BehaviorTree.Tree
 
 
         // Create a sequence node to fly, then land, then wait
-        SequenceOrder sequence = new SequenceOrder(new List<Node> { flyNode, landNode, waitNode, flyNode });
+        Selector sequence = new Selector(new List<Node> {checkBird ,flyNode});
+        SequenceOrder order = new SequenceOrder(new List<Node> { flyNode, sequence });
 
         // Return the root node
-        return sequence;
+        return order;
     }
 }

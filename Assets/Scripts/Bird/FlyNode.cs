@@ -5,13 +5,16 @@ using BehaviorTree;
 
 public class FlyNode : Node
 {
-    private Bird bird;
+    private GameObject bird;
     private float speed;
     private float amplitude; // Amplitude of the sine wave
     private float frequency; // Frequency of the sine wave
     private float initialY; // Initial y position of the bird
+    bool ChangePosition = true;
+    float xCor;
+    float yCor;
 
-    public FlyNode(Bird bird, float speed, float amplitude, float frequency)
+    public FlyNode(GameObject bird, float speed, float amplitude, float frequency)
     {
         this.bird = bird;
         this.speed = speed;
@@ -22,26 +25,44 @@ public class FlyNode : Node
 
     public override NodeState Evalute()
     {
+        if (ChangePosition)
+        {  
+            float xCor = Random.Range(-25f, 25f);
+            float yCor = initialY + amplitude * Mathf.Sin(frequency * xCor);
+            SetData("xCor", xCor);
+            SetData("yCor", yCor);
 
-        //MoveToward TO POSITION
+            ChangePosition = false;
+        }
+        xCor =(float) GetData("xCor");
+        yCor = (float)GetData("yCor");
+
 
         //RandomPoistion in Range
 
         // Move the bird across the screen in a sine wave pattern
-        bird.transform.position += Vector3.right * speed * Time.deltaTime;
 
-        // Calculate phase shift based on time
-        float yPosition = initialY + amplitude * Mathf.Sin(frequency * Time.time);
 
-        bird.transform.position = new Vector3(bird.transform.position.x, yPosition, bird.transform.position.z);
 
+
+        //float yPosition = Mathf.Clamp( Mathf.Sin(frequency * Time.deltaTime),0.25f,1);
+        //MoveToward TO POSITION
+
+        bird.transform.position = Vector3.MoveTowards(bird.transform.position,new Vector3(xCor,yCor, bird.transform.position.z),10f*Time.deltaTime);
+ 
         //  Has an if (Bird == position ) 
-
+        if(Vector2.Distance(bird.transform.position,new Vector2(xCor, yCor)) < 10f)
+        {
+            //Debug.Log("Change");
+            ChangePosition = true;
+            return NodeState.SUCCESS;
+        }
 
         // If the bird has reached the other side of the screen, return SUCCESS
         if (bird.transform.position.x > 30f)
         {
             bird.transform.position = new Vector3(0, bird.transform.position.y, bird.transform.position.z); // Reset position
+
             return NodeState.SUCCESS;
         }
 
