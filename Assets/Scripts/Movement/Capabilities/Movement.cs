@@ -58,6 +58,8 @@ public class Movement : MonoBehaviour
     }
     private void Update()
     {
+
+        
         _direction.x = _controller.input.RetrieveMoveInput();
 
 
