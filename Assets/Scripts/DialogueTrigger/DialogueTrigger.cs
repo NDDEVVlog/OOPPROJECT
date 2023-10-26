@@ -10,6 +10,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public void StartDialogue()
     {
+        FindObjectOfType<DialogueManager>().enabled = true;
         FindObjectOfType<DialogueManager>().OpenDialogue(messages, actors);
     }
 }
