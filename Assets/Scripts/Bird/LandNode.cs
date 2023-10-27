@@ -11,7 +11,7 @@ public class LandNode : Node
     private GameObject lastLandingSpot;
     bool IsLanding;
     GameObject CurrentLandingSpot;
-    private static List<GameObject> occupiedSpots = new List<GameObject>();
+    private List<GameObject> occupiedSpots = new List<GameObject>();
 
     public LandNode(GameObject bird, GameObject[] landingSpots, float speed,bool isLanding)
     {
