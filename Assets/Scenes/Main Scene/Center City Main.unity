@@ -6475,7 +6475,6 @@ MonoBehaviour:
     m_Bits: 1024
   landingSpots:
   - {fileID: 274799852}
-  - {fileID: 1659498046}
 --- !u!114 &513530321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8391,7 +8390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!251 &866191802
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -9282,7 +9281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!251 &995484930
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -12230,7 +12229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!251 &1583008470
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -13740,7 +13739,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838715848}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b7d986a7438fb142aa8cc6bf6d9a671, type: 3}
   m_Name: 
@@ -13937,7 +13936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!251 &2003090563
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -14281,7 +14280,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!251 &2084735688
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -14621,7 +14620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &2111016347
 SpriteRenderer:
   m_ObjectHideFlags: 0

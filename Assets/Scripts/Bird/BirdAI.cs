@@ -24,11 +24,11 @@ public class BirdAI : BehaviorTree.Tree
         // Create a selector node to choose between flying and landing
 
         // Create a CheckBirdNode   
-        CheckBirdNode checkBirdNode = new CheckBirdNode(1f, LayerMask.GetMask("Bird"),landingSpots);
+        CheckBirdNode checkBirdNode = new CheckBirdNode(this.gameObject,0.1f, LayerMask.GetMask("Bird"),landingSpots);
 
         SequenceOrder LandDing = new SequenceOrder(new List<Node> { landNode, waitNode });
 
-        SequenceOrder checkBird = new SequenceOrder(new List<Node> { checkBirdNode,LandDing });
+        Sequence checkBird = new Sequence(new List<Node> { checkBirdNode,landNode });
 
         //land --> MoveToward 
 
@@ -40,6 +40,6 @@ public class BirdAI : BehaviorTree.Tree
         SequenceOrder order = new SequenceOrder(new List<Node> { flyNode, sequence });
 
         // Return the root node
-        return order;
+        return sequence;
     }
 }

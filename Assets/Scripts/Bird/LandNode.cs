@@ -25,7 +25,7 @@ public class LandNode : Node
     {
         Debug.Log("land");
         // If the bird is not already landing, choose a new spot
-        if (!IsLanding)
+        /*if (!IsLanding)
         {
             GameObject landingSpot;
             do
@@ -37,11 +37,12 @@ public class LandNode : Node
             IsLanding = true; // Set the bird's state to landing
             occupiedSpots.Add(landingSpot); // Add the spot to the list of occupied spots
             CurrentLandingSpot = landingSpot; // Set the current landing spot for the bird
-        }
+        }*/
 
         // Check if bird.CurrentLandingSpot is not null before accessing its position
-        if (CurrentLandingSpot != null)
+        //if (CurrentLandingSpot != null)
         {
+            CurrentLandingSpot = (GameObject)GetData("LandingSpot");
             // Move the bird to the current landing spot over time instead of teleporting instantly
             float step = speed * Time.deltaTime;
             bird.transform.position = Vector3.MoveTowards(bird.transform.position, CurrentLandingSpot.transform.position, step);

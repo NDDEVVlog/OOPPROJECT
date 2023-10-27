@@ -8,11 +8,13 @@ public class CheckBirdNode : BehaviorTree.Node
     public float radius; // Radius of the overlap sphere
     public LayerMask birdLayer; // Layer on which the birds are
     public GameObject[] landSpots;
-    public CheckBirdNode(float radius, LayerMask birdLayer,GameObject[] landSpot)
+    public GameObject bird;
+    public CheckBirdNode(GameObject bird,float radius, LayerMask birdLayer,GameObject[] landSpot)
     {
         this.radius = radius;
         this.birdLayer = birdLayer;
         this.landSpots = landSpot;
+        this.bird = bird;
     }
 
     public override NodeState Evalute()
@@ -29,14 +31,15 @@ public class CheckBirdNode : BehaviorTree.Node
         foreach (var hit in hits)
         {
             if (hit.CompareTag("Bird"))
-            {
-                Debug.Log("Bird detected at position: " + landSpots[spotIndex].transform.position);
-                SetData("LandingSpot", landSpots[spotIndex].transform.position);
+            {   
+                Debug.Log(bird.name +" fount that Bird detected at position: " + landSpots[spotIndex].transform.position);
+                
+                
                 Debug.Log("Check");
                 return NodeState.FAILURE;
             }
         }
-        
+        SetData("LandingSpot", landSpots[spotIndex].transform.position);
 
         return NodeState.SUCCESS;
     }
