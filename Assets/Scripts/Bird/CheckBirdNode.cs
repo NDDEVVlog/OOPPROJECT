@@ -9,38 +9,50 @@ public class CheckBirdNode : BehaviorTree.Node
     public LayerMask birdLayer; // Layer on which the birds are
     public GameObject[] landSpots;
     public GameObject bird;
-    public CheckBirdNode(GameObject bird,float radius, LayerMask birdLayer,GameObject[] landSpot)
+    public BirdAI aiBird;
+
+
+
+
+    GameObject CurrentLandingSpot;
+
+
+    public CheckBirdNode(BirdAI aiBird, GameObject bird,float radius, LayerMask birdLayer,GameObject[] landSpot)
     {
         this.radius = radius;
         this.birdLayer = birdLayer;
         this.landSpots = landSpot;
         this.bird = bird;
+        this.aiBird = aiBird;
     }
 
     public override NodeState Evalute()
     {
-        /*Vector2 position = (Vector2)GetData("position");
-        if (position == null)
-        {
-            Debug.LogError("Position data not found");
-            return NodeState.FAILURE;
-        }*/
 
+        
         int spotIndex = Random.Range(0, landSpots.Length);
-        Collider2D[] hits = Physics2D.OverlapCircleAll(landSpots[spotIndex].transform.position, radius, birdLayer);
-        foreach (var hit in hits)
+        CurrentLandingSpot = landSpots[spotIndex];
+        if (aiBird.LandSpot == null)
         {
-            if (hit.CompareTag("Bird"))
-            {   
-                Debug.Log(bird.name +" fount that Bird detected at position: " + landSpots[spotIndex].transform.position);
-                
-                
-                Debug.Log("Check");
-                return NodeState.FAILURE;
-            }
-        }
-        SetData("LandingSpot", landSpots[spotIndex].transform.position);
 
+            
+            Collider2D[] hits = Physics2D.OverlapCircleAll(CurrentLandingSpot.transform.position, radius, birdLayer);
+            aiBird.LandSpot = CurrentLandingSpot;
+            foreach (var hit in hits)
+            {
+                if (hit.CompareTag("Bird"))
+                {
+                    Debug.Log(bird.name + " fount that Bird detected at position: " + CurrentLandingSpot.transform.position);
+                    aiBird.LandSpot = null;
+
+                    Debug.Log("Check");
+                    return NodeState.FAILURE;
+                }
+            }
+
+            aiBird.LandSpot = CurrentLandingSpot;
+            return NodeState.SUCCESS;
+        }
         return NodeState.SUCCESS;
     }
 }
