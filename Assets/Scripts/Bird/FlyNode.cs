@@ -14,6 +14,25 @@ public class FlyNode : Node
     float xCor;
     float yCor;
 
+    private float flyTime=3f;
+    private float flyTimeCounter = 0;
+
+    float minFlyTime = 4f;
+    float maxFlyTime = 10f;
+    public bool isFacingRight = true;
+    public bool IsFacingRight
+    {
+        get { return isFacingRight; }
+        private set
+        {
+            if (isFacingRight != value)
+            {
+                bird.transform.localScale *= new Vector2(-1, 1);
+            }
+            isFacingRight = value;
+        }
+    }
+
     public FlyNode(GameObject bird, float speed, float amplitude, float frequency)
     {
         this.bird = bird;
@@ -24,7 +43,9 @@ public class FlyNode : Node
     }
 
     public override NodeState Evalute()
-    {
+    {   
+
+
         if (ChangePosition)
         {  
             float xCor = Random.Range(-25f, 25f);
@@ -55,13 +76,35 @@ public class FlyNode : Node
         {
             //Debug.Log("Change");
             ChangePosition = true;
-            return NodeState.SUCCESS;
+            
+        }
+        var _direction = new Vector3(xCor, yCor, bird.transform.position.z) - bird.transform.position;
+        if (_direction.x > 0 && !IsFacingRight)
+        {
+            //face the Right
+            IsFacingRight = true;
+        }
+        else if (_direction.x < 0 && IsFacingRight)
+        {
+            //Face the left
+            IsFacingRight = false;
         }
 
         // If the bird has reached the other side of the screen, return SUCCESS
         if (bird.transform.position.x > 30f)
         {
             bird.transform.position = new Vector3(0, bird.transform.position.y, bird.transform.position.z); // Reset position
+
+            return NodeState.SUCCESS;
+        }
+
+        flyTimeCounter += Time.deltaTime;
+
+        if (flyTimeCounter >= flyTime)
+        {
+            flyTimeCounter = 0; // Reset counter
+
+            flyTime = Random.Range(minFlyTime,maxFlyTime); // Set next wait time
 
             return NodeState.SUCCESS;
         }
