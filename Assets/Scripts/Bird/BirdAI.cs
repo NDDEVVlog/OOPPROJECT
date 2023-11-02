@@ -10,6 +10,19 @@ public class BirdAI : BehaviorTree.Tree
     public GameObject[] landingSpots;
     public bool isLanding = false;
     public GameObject LandSpot;
+    public bool isFacingRight = true;
+    public bool IsFacingRight
+    {
+        get { return isFacingRight; }
+        set
+        {
+            if (isFacingRight != value)
+            {
+                transform.localScale *= new Vector2(-1, 1);
+            }
+            isFacingRight = value;
+        }
+    }
     private void Awake()
     {
         
@@ -18,7 +31,7 @@ public class BirdAI : BehaviorTree.Tree
     protected override Node SetupTree()
     {
         // Create nodes for each behavior
-        FlyNode flyNode = new FlyNode(this.gameObject, speed, 1f, 0.5f);
+        FlyNode flyNode = new FlyNode(this.gameObject, speed, 1f, 0.5f,this);
         LandNode landNode = new LandNode(this,this.gameObject, landingSpots, speed);
         WaitNode waitNode = new WaitNode(3f);
 

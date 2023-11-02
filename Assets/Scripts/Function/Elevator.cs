@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <algorithm>
 #include <vector>
 #include <string>
@@ -251,3 +251,4 @@ int main()
     Elevator elevator(min_floor_num, max_floor_num, max_capacity);
     elevator.start_elevator();
 }
+*/

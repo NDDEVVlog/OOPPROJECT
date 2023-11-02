@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 998259971788820043}
   - component: {fileID: 998259971788820044}
   - component: {fileID: 998259971788820045}
-  - component: {fileID: 998259971788820046}
   - component: {fileID: 998259971788820047}
   - component: {fileID: 998259971788820048}
   - component: {fileID: 998259971788820049}
@@ -112,24 +111,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &998259971788820046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998259971788820051}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b29c5a0837bb04d8d6ea17ef2bbdd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  landingSpots:
-  - {fileID: 0}
-  - {fileID: 0}
-  minWaitTime: 4
-  maxWaitTime: 5
 --- !u!114 &998259971788820047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,14 +123,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b7d986a7438fb142aa8cc6bf6d9a671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0.75
   checkRadius: 0
   birdLayer:
     serializedVersion: 2
     m_Bits: 1024
   landingSpots:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   isLanding: 0
   LandSpot: {fileID: 0}
+  isFacingRight: 1
 --- !u!96 &998259971788820048
 TrailRenderer:
   serializedVersion: 2
@@ -259,7 +247,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
