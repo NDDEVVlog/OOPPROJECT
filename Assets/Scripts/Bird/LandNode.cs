@@ -13,18 +13,7 @@ public class LandNode : Node
     private List<GameObject> occupiedSpots = new List<GameObject>();
     BirdAI aiBird;
     public bool isFacingRight = true;
-    public bool IsFacingRight
-    {
-        get { return isFacingRight; }
-        private set
-        {
-            if (isFacingRight != value)
-            {
-                bird.transform.localScale *= new Vector2(-1, 1);
-            }
-            isFacingRight = value;
-        }
-    }
+    
     public LandNode(BirdAI aiBird,GameObject bird, GameObject[] landingSpots, float speed)
     {
         this.bird = bird;
@@ -50,18 +39,19 @@ public class LandNode : Node
             float step = speed * Time.deltaTime;
             bird.transform.position = Vector3.MoveTowards(bird.transform.position, CurrentLandingSpot.transform.position, step);
             var _direction = CurrentLandingSpot.transform.position - bird.transform.position;
-            if (_direction.x > 0 && !IsFacingRight)
+            if (_direction.x > 0 && !aiBird.IsFacingRight)
             {
                 //face the Right
-                IsFacingRight = true;
+                aiBird.IsFacingRight = true;
             }
-            else if (_direction.x < 0 && IsFacingRight)
+            else if (_direction.x < 0 && aiBird.IsFacingRight)
             {
                 //Face the left
-                IsFacingRight = false;
+                aiBird.IsFacingRight = false;
             }
             if (Vector3.Distance(bird.transform.position, CurrentLandingSpot.transform.position) < 0.001f)
             {
+                bird.GetComponent<Animator>().SetBool("Fly", false);
                 aiBird.LandSpot = null;
                 aiBird.isLanding = false; // Reset the bird's state to not landing
                // occupiedSpots.Remove(CurrentLandingSpot); // Remove the spot from the list of occupied spots
