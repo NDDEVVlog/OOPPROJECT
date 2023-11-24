@@ -854,6 +854,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       TX FX Torch Flame_14: -1466571721
+      TX FX Torch Flame_24: 2050619695
       TX FX Torch Flame_18: -1632710694
       TX FX Torch Flame_33: 1923746301
       TX FX Torch Flame_6: -751523833
@@ -865,7 +866,6 @@ TextureImporter:
       TX FX Torch Flame_26: 1160399341
       TX FX Torch Flame_29: 1699253171
       TX FX Torch Flame_23: -1791819326
-      TX FX Torch Flame_30: 294349297
       TX FX Torch Flame_2: -1071942466
       TX FX Torch Flame_15: 1217194122
       TX FX Torch Flame_9: -1446838327
@@ -880,13 +880,13 @@ TextureImporter:
       TX FX Torch Flame_32: -2042450466
       TX FX Torch Flame_20: -2041613110
       TX FX Torch Flame_22: 2070079545
-      TX FX Torch Flame_7: 828397847
-      TX FX Torch Flame_3: -179190570
-      TX FX Torch Flame_4: 667218486
-      TX FX Torch Flame_8: 1599179132
-      TX FX Torch Flame_24: 2050619695
-      TX FX Torch Flame_12: 1995116920
       TX FX Torch Flame_13: -216220854
+      TX FX Torch Flame_30: 294349297
+      TX FX Torch Flame_3: -179190570
+      TX FX Torch Flame_7: 828397847
+      TX FX Torch Flame_8: 1599179132
+      TX FX Torch Flame_4: 667218486
+      TX FX Torch Flame_12: 1995116920
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
