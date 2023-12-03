@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 494da35f88173e24d86956d72c5581d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _connection: {fileID: 0}
+  _connection: {fileID: 11400000, guid: 53c7528f719980c44b094bf8fd57e648, type: 2}
   _targetScenceName: 
   _spawnPoint: {fileID: 3656576354709494415}
 --- !u!61 &2469703122202969186
