@@ -30,6 +30,8 @@ public class AbilityHolder : MonoBehaviour
     {
         foreach (BaseSingleAbilitySkill a in abilitySkill)
             a.Check(Time.deltaTime,Time.fixedDeltaTime,this.gameObject);
+
+
         /*switch (state)
         {
             case AbilityState.ready:
