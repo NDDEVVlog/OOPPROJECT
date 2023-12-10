@@ -5521,7 +5521,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4095
 --- !u!114 &265479868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7874,7 +7874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &800024285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12766,6 +12766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b7d986a7438fb142aa8cc6bf6d9a671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
   checkRadius: 0
   birdLayer:
     serializedVersion: 2
@@ -12773,6 +12774,9 @@ MonoBehaviour:
   landingSpots:
   - {fileID: 274799852}
   - {fileID: 1659498046}
+  isLanding: 0
+  LandSpot: {fileID: 0}
+  isFacingRight: 1
 --- !u!96 &2111016353
 TrailRenderer:
   serializedVersion: 2
