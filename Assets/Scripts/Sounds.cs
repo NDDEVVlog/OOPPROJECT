@@ -1,7 +1,7 @@
 using UnityEngine.Audio;
 using UnityEngine;
 [System.Serializable]  // Start is called before the first frame update
-    public class Sound
+    public class Sounds
     {
         public string name;
         public AudioClip clip;

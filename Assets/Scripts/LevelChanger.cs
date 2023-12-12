@@ -16,18 +16,18 @@ public class LevelChanger : MonoBehaviour
     {
         if (_connection == LevelConnection.ActiveConnection)
         {
-            FindObjectOfType<Controller>().transform.position = _spawnPoint.position;
+            FindObjectOfType<PlayerController>().transform.position = _spawnPoint.position;
         }
     }
-    private string _targetSceneName;
+
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        var player = other.collider.GetComponent<Controller>();
+        var player = other.collider.GetComponent<PlayerController>();
         if (player != null)
         {
             LevelConnection.ActiveConnection = _connection;
-            SceneManager.LoadScene(_targetSceneName);
+            SceneManager.LoadScene(_targetScenceName);
         }
     }
 }
