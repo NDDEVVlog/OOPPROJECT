@@ -1,0 +1,4 @@
+repository "OOPPROJECT1@Kajinyashi@cloud"
+  path "/"
+    br "/main"
+    co "/main"
