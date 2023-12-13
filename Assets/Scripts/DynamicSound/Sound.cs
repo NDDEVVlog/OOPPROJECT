@@ -20,7 +20,7 @@ namespace DynamicAudio
         [ReadOnly]
         public MaterialType materialType;
         public Sound[] objectSounds;
-        //public ParticleSystem[] particleSystems;
+        public ParticleSystem[] particleSystems;
     }
     public enum MaterialType
     {
@@ -31,7 +31,7 @@ namespace DynamicAudio
         Dirt,
         Glass,
         Metal,
-        Null
+        None
 
     }
     [System.Serializable]

@@ -17,7 +17,7 @@ namespace Damage{
 
         public static void ApplyPointDamage(Damage.PointDamageInfor pointDamageInfor)
         {
-            pointDamageInfor.damageInfo.DamagedTarget.GetComponent<HealthComponent>().TakeDamage(pointDamageInfor.damageInfo.BaseDamage);
+            pointDamageInfor.damageInfo.DamagedTarget.GetComponent<HealthComponent>().TakeDamage(pointDamageInfor.damageInfo.BaseDamage,pointDamageInfor.damageInfo.DamageCauser);
 
         }
 

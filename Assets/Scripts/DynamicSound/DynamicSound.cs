@@ -1,21 +1,35 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DynamicAudio;
-public class DynamicSound : MonoBehaviour
+public class DynamicSound
 {
-    public SoundHolder soundHolder;
-    public void PlaySound(ObjectInfo objectInfo)
+    
+    public static void PlaySound(ObjectInfo objectInfo, SoundHolder soundHolder)
     {
         //Get Enum Value Number
         int value = ReturnObjectNumber(objectInfo);
+        MaterialType type = (MaterialType)value;
+        if(type == MaterialType.None)
+        {
+            objectInfo.source.clip = objectInfo.ownedSound[Random.Range(0, objectInfo.ownedSound.Length)].audioClip;
+            objectInfo.source.PlayOneShot(objectInfo.source.clip);
+            return;
 
-        Sound[] sounds = ReturnSounds(value);
+        }
+        //Get Sound 
+        Sound[] sounds = ReturnSounds(soundHolder,value);
 
         objectInfo.source.clip = sounds[Random.Range(0,sounds.Length)].audioClip;
         objectInfo.source.PlayOneShot(objectInfo.source.clip);
     }
-    public void PlaySound(int layer,GameObject ob)
+    public static void PlaySound(ObjectInfo objectInfo)
+    {
+        objectInfo.source.clip = objectInfo.ownedSound[Random.Range(0, objectInfo.ownedSound.Length)].audioClip;
+        objectInfo.source.PlayOneShot(objectInfo.source.clip);
+    }
+    
+    public static void PlaySound(int layer,GameObject ob, SoundHolder soundHolder)
     {
         string mask = LayerMask.LayerToName(layer);
         MaterialType materialType;
@@ -24,20 +38,30 @@ public class DynamicSound : MonoBehaviour
             materialType = (MaterialType)System.Enum.Parse(typeof(MaterialType), mask);
 
             int value = (int)System.Enum.Parse(typeof(MaterialType), materialType.ToString());
-
-            Sound[] sounds = ReturnSounds(value);
+           
+            Sound[] sounds = ReturnSounds(soundHolder,value);
             AudioSource source = ob.GetComponent<AudioSource>();
             source.clip = sounds[Random.Range(0, sounds.Length)].audioClip;
             source.PlayOneShot(source.clip);
         }
         
     }
-    Sound[] ReturnSounds(int value)
+    public static void PlaySound(MaterialType materialType, SoundHolder soundHolder,GameObject ob)
     {
-        return soundHolder.objectAudios[value].objectSounds;
+
+        int i = (int)materialType;
+        Sound[] sounds = ReturnSounds(soundHolder, i);
+        AudioSource source = ob.GetComponent<AudioSource>();
+        source.clip = sounds[Random.Range(0, sounds.Length)].audioClip;
+        source.PlayOneShot(source.clip);
+
     }
-    int ReturnObjectNumber(ObjectInfo objectInfo)
+    static Sound[] ReturnSounds(SoundHolder holder, int value)
     {
-        return (int)System.Enum.Parse(typeof(MaterialType), objectInfo.materialType.ToString());
+        return holder.objectAudios[value].objectSounds;
+    }
+    static int ReturnObjectNumber(ObjectInfo objectInfo)
+    {
+        return (int)System.Enum.Parse(typeof(MaterialType), objectInfo.materialType.ToString()); // return the number of element in Enum
     }    
 }
