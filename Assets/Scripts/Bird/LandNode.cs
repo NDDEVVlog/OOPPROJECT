@@ -25,7 +25,7 @@ public class LandNode : Node
 
     public override NodeState Evalute()
     {
-        Debug.Log("land");
+
         // If the bird is not already landing, choose a new spot
 
         

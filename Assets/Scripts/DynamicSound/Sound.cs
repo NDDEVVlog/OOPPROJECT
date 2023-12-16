@@ -26,9 +26,11 @@ namespace DynamicAudio
     {
         Gravel,
         Water,
+        Stone,
         Wood,
         Concrete,
         Dirt,
+        Grass,
         Glass,
         Metal,
         None

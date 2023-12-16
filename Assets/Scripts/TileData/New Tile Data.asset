@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: New Tile Data
   m_EditorClassIdentifier: 
   tileDataSet:
-  - tile: {fileID: 0}
+  - tile: {fileID: 11400000, guid: ba9393ffeacb00a4db55cd491e4a3291, type: 2}
     canBeDestory: 0
-  type: 0
+  type: 6

@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b9beb615ca69a146ab069879da6295b, type: 3}
+  m_Name: Dirt
+  m_EditorClassIdentifier: 
+  tileDataSet:
+  - tile: {fileID: 11400000, guid: 37a6712f4b43a74479301e96a1c1ff29, type: 2}
+    canBeDestory: 0
+  - tile: {fileID: 11400000, guid: f161f2b46c3e2154b8082a0fcfc03570, type: 2}
+    canBeDestory: 0
+  - tile: {fileID: 11400000, guid: 7d73b8f2105954d47bfc286e34aee8be, type: 2}
+    canBeDestory: 0
+  - tile: {fileID: 11400000, guid: a5ee1943c8408eb48874d35eef96918d, type: 2}
+    canBeDestory: 0
+  - tile: {fileID: 11400000, guid: 1121908e0eb21cf4eaba94bae28c1ae3, type: 2}
+    canBeDestory: 0
+  - tile: {fileID: 11400000, guid: 3cc2e5eaf8a1d3f4b877da91b693bac1, type: 2}
+    canBeDestory: 0
+  - tile: {fileID: 11400000, guid: 3d3936406d5629649b4d7cd307ef3e50, type: 2}
+    canBeDestory: 0
+  - tile: {fileID: 11400000, guid: 90f9c0a2af66ec94bba88667c5aad93c, type: 2}
+    canBeDestory: 0
+  - tile: {fileID: 11400000, guid: 8f7db147832487742921f487e0e25acf, type: 2}
+    canBeDestory: 0
+  - tile: {fileID: 11400000, guid: d0a6edcf77ac06f4a9e7ee796af6aaca, type: 2}
+    canBeDestory: 0
+  - tile: {fileID: 11400000, guid: 21c17aba28dc55942b140a15580d97f1, type: 2}
+    canBeDestory: 0
+  - tile: {fileID: 11400000, guid: cb03ae5a456d5e84aa639565259e9bf8, type: 2}
+    canBeDestory: 0
+  - tile: {fileID: 11400000, guid: 5fe64a4ea25f0b541bcac09599c54f67, type: 2}
+    canBeDestory: 0
+  - tile: {fileID: 11400000, guid: c442ad6bcfe49544292c800c5db316ac, type: 2}
+    canBeDestory: 0
+  type: 5
