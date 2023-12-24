@@ -6156,10 +6156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c77646a499494b4aa8ef99f165ea6ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectEffect:
-  - obMaterial: 0
-    particle: {fileID: 0}
-    audioClip: []
 --- !u!251 &472065042
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -6431,7 +6427,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514259491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.726, y: 2.022, z: -10}
+  m_LocalPosition: {x: 5.24, y: 1.5899999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8606,7 +8602,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942084402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.726, y: 2.022, z: -10}
+  m_LocalPosition: {x: 5.24, y: 1.5899999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12791,10 +12787,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c77646a499494b4aa8ef99f165ea6ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectEffect:
-  - obMaterial: 0
-    particle: {fileID: 0}
-    audioClip: []
 --- !u!1001 &1799223088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13711,11 +13703,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3077683922577961324, guid: 5d6d5f4c7aceb5240a043b86f88afa54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.726
+      value: 5.24
       objectReference: {fileID: 0}
     - target: {fileID: 3077683922577961324, guid: 5d6d5f4c7aceb5240a043b86f88afa54, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.202
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: 3077683922577961324, guid: 5d6d5f4c7aceb5240a043b86f88afa54, type: 3}
       propertyPath: m_LocalPosition.z
