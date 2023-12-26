@@ -40,6 +40,7 @@ public class SingleAbility : MonoBehaviour
     void Attack()
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackLocation.position, attackRange, enemyLayers);//create and detect enemy in range
+       
         foreach (Collider2D enemy in hitEnemies)//hit points
         {
             enemy.GetComponent<HealthComponent>().TakeDamage(attackDamage,this.gameObject);
