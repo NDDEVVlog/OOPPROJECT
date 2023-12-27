@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main Scene/Level/Level Between Center And Village.unity
+    guid: 0fe4632bc2b367f4789ec36a08583522
+  - enabled: 1
+    path: Assets/Scenes/Main Scene/Center City Main.unity
+    guid: 9da0270f379538a4d9d504e4c31396aa
   m_configObjects: {}

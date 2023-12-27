@@ -24,7 +24,7 @@ public class MovementSound : MonoBehaviour
         {
             foreach(var tile in tileData.tileDataSet)
             {
-                Debug.Log(tile.tile + " ," +  tileData);
+               // Debug.Log(tile.tile + " ," +  tileData);
 
                 dataFromTiles.Add(tile.tile, tileData);
             }
@@ -39,7 +39,7 @@ public class MovementSound : MonoBehaviour
         RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector2.down, 0.5f, layer);
         if(ray.collider != null)
         {
-            Debug.Log("hit");   
+
             if (ray.collider.GetComponent<Tilemap>())
             {   
                 var map = ray.collider.GetComponent<Tilemap>();

@@ -15,7 +15,7 @@ public class TaskPatrol : Node
     private GameObject OwnTaskObject;
     private AIController _controller;
     //private PlayerStateMachine stateMachineAI;
-    private float _WaitTime = 2f;
+    private float _WaitTime = 0f;
     private float _WaitCounter = 0f;
 
     private RaycastHit2D _groundInfoBottom;
@@ -29,6 +29,16 @@ public class TaskPatrol : Node
         OwnTaskObject = ob;
         _controller = controller;
        // stateMachineAI = stateMachine;
+    }
+    public TaskPatrol(LayerMask layer, float bottom, float top, GameObject ob, AIController controller,float _WaitTime)
+    {
+        _bottomDistance = bottom;
+        _layerMask = layer;
+        _topDistance = top;
+        OwnTaskObject = ob;
+        _controller = controller;
+        this._WaitTime = _WaitTime;
+
     }
 
     public override NodeState Evalute()

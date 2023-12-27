@@ -6,7 +6,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
 
-    [SerializeField, Range(0f, 100f)] private float _maxSpeed = 4f;
+    [SerializeField, Range(0f, 100f)] public float _maxSpeed = 4f;
     [SerializeField, Range(0f, 100f)] private float _maxAcceleration = 35f;
     [SerializeField, Range(0f, 100f)] private float _maxAirAcceleration = 20f;
     [SerializeField, Range(0f, 100f)] private float _maxDeceleration = 35f;
