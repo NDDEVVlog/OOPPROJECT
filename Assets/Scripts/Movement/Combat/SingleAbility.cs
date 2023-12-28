@@ -11,30 +11,32 @@ public class SingleAbility : MonoBehaviour
     
     public float attackRange = 0.5f;
     public int attackDamage = 1;
-    public float attackRate = 2f;
-    private float nextAttackTime = 0f;
+
+    public bool isAttacking = false;
+
+    
     public KeyCode code;
     public AnimationClip attack;
-
+    public static SingleAbility instance;
     public BaseSingleAbilitySkill[] baseSkill;
 
     public PlayerController controller;
-
+    private void Awake()
+    {
+        instance = this;
+    }
     public void Start()
     {
         controller= GetComponent<PlayerController>();
+        animator = GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update()
     {
-        if(Time.time >= nextAttackTime)
+        if (controller.RetriecveCustomInput(code) && !isAttacking)
         {
-            if (controller.RetriecveCustomInput(code))
-            {
-                //Attack();
-                nextAttackTime = Time.time + 1f / attackRate;
-                animator.Play(attack.name, GetComponent<SpriteRenderer>().sortingLayerID);
-            }
+            //Attack();
+            isAttacking = true;
         }
     }
     void Attack()
