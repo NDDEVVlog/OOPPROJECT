@@ -17,7 +17,7 @@ public class HealthComponent : MonoBehaviour
         currentHealth = maxHealth;
         flashTrigger = GetComponent<SimpleFlash>();
     }
-    public virtual void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage, GameObject DamageCauser)
     {
         currentHealth -= damage;
         flashTrigger.Flash();

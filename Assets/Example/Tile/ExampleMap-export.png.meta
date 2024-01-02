@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1405,8 +1405,8 @@ TextureImporter:
       ExampleMap-export_6: 349127077
       ExampleMap-export_1: -1893137592
       ExampleMap-export_5: -452300500
-      ExampleMap-export_34: 1157814875
       ExampleMap-export_17: 801633190
+      ExampleMap-export_34: 1157814875
       ExampleMap-export_8: 917498674
       ExampleMap-export_4: 1297485313
       ExampleMap-export_25: -1075379059
@@ -1416,12 +1416,12 @@ TextureImporter:
       ExampleMap-export_53: 1725111120
       ExampleMap-export_7: -1791847657
       ExampleMap-export_33: -434068550
-      ExampleMap-export_14: -2068603335
+      ExampleMap-export_0: -1754324838
       ExampleMap-export_10: 299636140
       ExampleMap-export_2: -96189550
-      ExampleMap-export_16: 167892573
+      ExampleMap-export_14: -2068603335
       ExampleMap-export_39: -463221085
-      ExampleMap-export_0: -1754324838
+      ExampleMap-export_16: 167892573
       ExampleMap-export_3: 1998062516
       ExampleMap-export_28: -2104311541
       ExampleMap-export_41: -113901584
