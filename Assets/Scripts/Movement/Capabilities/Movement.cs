@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     [SerializeField, Range(0f, 100f)] private float maxTurnSpeed = 35f;
     [SerializeField, Range(0f, 100f)] private float maxAirTurnSpeed = 20f;
 
+
     public bool isFacingRight = true;
     public bool IsFacingRight
     {
@@ -38,7 +39,6 @@ public class Movement : MonoBehaviour
     private float _maxSpeedChange, _acceleration;
     private float _deceleration, turnSpeed;
     private bool _onGround;
-   
 
 
 
