@@ -5,7 +5,10 @@ using BehaviorTree;
 
 public class BasicEnemyBT : BehaviorTree.Tree
 {
+    public static float fovRange = 3f;
+    public static float attackRange = 2f;
     public LayerMask layer;
+    public Movement   movement;
     public AIController ai;
    // public PlayerStateMachine stateMachine;
     private void Awake()
