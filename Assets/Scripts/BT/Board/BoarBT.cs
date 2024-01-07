@@ -10,7 +10,7 @@ public class BoarBT : BehaviorTree.Tree
     public LayerMask layer;
     public AIController ai;
     public bool canSeePlayer;
-    SnailHealth snailHeatlh;
+
     public FieldOfView fieldOfView;
     public float walkSpeed = 0.5f;
     public float runSpeed = 2.0f;
@@ -20,7 +20,7 @@ public class BoarBT : BehaviorTree.Tree
     {
         move = GetComponent<Movement>();
         fieldOfView = GetComponent<FieldOfView>();
-        snailHeatlh = GetComponent<SnailHealth>();
+
     }
     void CheckCanSee()
     {   
