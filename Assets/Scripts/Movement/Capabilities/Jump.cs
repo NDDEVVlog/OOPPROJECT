@@ -106,7 +106,7 @@ public class Jump : MonoBehaviour
                 _jumpPhase += 1;
             }
 
-            dust.Play();
+            
 
             _jumpBufferCounter = 0;
             _coyoteCounter = 0;
