@@ -42,9 +42,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Upper
+    uniqueID: 297592073
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: New Layer 1
-    uniqueID: 297592073
+  - name: Under
+    uniqueID: 2054306417
     locked: 0
