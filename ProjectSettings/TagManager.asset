@@ -7,7 +7,6 @@ TagManager:
   - OneWayPlatform
   - Character
   - LandingPoint
-  - Bird
   layers:
   - Default
   - TransparentFX
