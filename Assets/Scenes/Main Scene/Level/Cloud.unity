@@ -79285,6 +79285,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2469703122202969184, guid: abd2b0f037d9692419e57219f8959932, type: 3}
+      propertyPath: _connection
+      value: 
+      objectReference: {fileID: 11400000, guid: eb14b5794ae8280439d228f409cb4fa3, type: 2}
+    - target: {fileID: 2469703122202969184, guid: abd2b0f037d9692419e57219f8959932, type: 3}
+      propertyPath: _targetScenceName
+      value: ReverseWaterFall
+      objectReference: {fileID: 0}
     - target: {fileID: 2469703122202969185, guid: abd2b0f037d9692419e57219f8959932, type: 3}
       propertyPath: m_RootOrder
       value: 1
