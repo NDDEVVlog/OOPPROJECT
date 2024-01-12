@@ -7,9 +7,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 917148448395962294, guid: 87a942722f054cf4fb7be668213df7af, type: 3}
+      propertyPath: attackDamage
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 917148448395962297, guid: 87a942722f054cf4fb7be668213df7af, type: 3}
       propertyPath: m_Name
       value: Character 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 917148448395962297, guid: 87a942722f054cf4fb7be668213df7af, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 917148448395962299, guid: 87a942722f054cf4fb7be668213df7af, type: 3}
       propertyPath: m_RootOrder
@@ -17,11 +25,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 917148448395962299, guid: 87a942722f054cf4fb7be668213df7af, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.726
+      value: -3.98
       objectReference: {fileID: 0}
     - target: {fileID: 917148448395962299, guid: 87a942722f054cf4fb7be668213df7af, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.202
+      value: 3.26
       objectReference: {fileID: 0}
     - target: {fileID: 917148448395962299, guid: 87a942722f054cf4fb7be668213df7af, type: 3}
       propertyPath: m_LocalPosition.z
@@ -228,4 +236,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 32759
   _tileDatas:
-  - {fileID: 11400000, guid: 73e975c444359fe4996e518427f0105f, type: 2}
+  - {fileID: 11400000, guid: 598de221134e3494d974b83bca4862c5, type: 2}

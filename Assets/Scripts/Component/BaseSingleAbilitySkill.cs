@@ -53,7 +53,7 @@ public class BaseSingleAbilitySkill:ScriptableObject
                 {
                     
                     //tempActiveTime = activeTime;
-                    Debug.Log("hi");
+
                     Activate(owner);
                     state = AbilityState.active;
                     activeTime = tempActiveTime;
@@ -62,7 +62,7 @@ public class BaseSingleAbilitySkill:ScriptableObject
             case AbilityState.active:
                 if (activeTime > 0)
                 { 
-                    Debug.Log("Cjek");
+
                     Activate(owner, TimeFixedDelta);
 
                     activeTime -= TimeDelta;

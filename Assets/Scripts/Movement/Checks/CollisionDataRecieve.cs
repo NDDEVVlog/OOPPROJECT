@@ -68,7 +68,7 @@ public class CollisionDataRecieve : MonoBehaviour
     private void RetrieveFriction(Collision2D collision)
     {
         //Take the friction value of collision in Rigidbody
-
+        if(collision.rigidbody!= null)
         _material = collision.rigidbody.sharedMaterial;
 
 

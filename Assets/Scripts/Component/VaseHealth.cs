@@ -34,7 +34,7 @@ public class VaseHealth : HealthComponent
     {
         this.DamageCauser = DamageCauser;
         onceDie = true;
-         Die();
+        Die();
         
     }
 }

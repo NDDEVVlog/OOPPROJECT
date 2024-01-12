@@ -23,6 +23,8 @@ public class Jump : MonoBehaviour
     public bool _desiredJump, _onGround, isJumping;
     public bool doubleJump = true;
 
+    public ParticleSystem dust;
+
     public Animator animator;
     // Start is called before the first frame update
     void Awake()
@@ -104,6 +106,8 @@ public class Jump : MonoBehaviour
                 _jumpPhase += 1;
             }
 
+            
+
             _jumpBufferCounter = 0;
             _coyoteCounter = 0;
             _jumpSpeed = Mathf.Sqrt(-2f * Physics2D.gravity.y * _jumpHeight * _upwardMovementMultiplier);
@@ -145,6 +149,7 @@ public class Jump : MonoBehaviour
             {
                 _jumpPhase += 1;
             }
+
 
             _jumpBufferCounter = 0;
             _coyoteCounter = 0;
