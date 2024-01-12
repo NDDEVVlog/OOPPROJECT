@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Scene/Level/Cloud.unity
     guid: 5fa64c8db70ea724db491f38d1cd30af
   - enabled: 1
+    path: Assets/Scenes/Main Scene/Level/ReverseWaterFall.unity
+    guid: a0a0189b989a831439284198238d5070
+  - enabled: 1
     path: Assets/Scenes/Main Scene/Level/TutorialJungle.unity
     guid: 4b22928ac1c98e94fbf193c044ff4a3f
   m_configObjects: {}
