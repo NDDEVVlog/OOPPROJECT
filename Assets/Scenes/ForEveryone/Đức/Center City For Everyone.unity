@@ -14223,6 +14223,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 947678116, guid: 5d6d5f4c7aceb5240a043b86f88afa54, type: 3}
+      propertyPath: _tileDatas.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 947678116, guid: 5d6d5f4c7aceb5240a043b86f88afa54, type: 3}
+      propertyPath: _tileDatas.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: e58bb3fcbfa951e42a9342180d9dde2a, type: 2}
+    - target: {fileID: 947678116, guid: 5d6d5f4c7aceb5240a043b86f88afa54, type: 3}
+      propertyPath: _tileDatas.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 08488d6d092029f43bf37048e5c9c1dc, type: 2}
+    - target: {fileID: 947678116, guid: 5d6d5f4c7aceb5240a043b86f88afa54, type: 3}
+      propertyPath: _tileDatas.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 79c48e8e3dc7f414ea7da3151fe7f5df, type: 2}
     - target: {fileID: 3077683922577961291, guid: 5d6d5f4c7aceb5240a043b86f88afa54, type: 3}
       propertyPath: abilitySkill.Array.size
       value: 1
