@@ -8,7 +8,7 @@ public class CameraZoom : MonoBehaviour
     private bool isPressing = false;
     private void Update()
     {
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.V))
         {
             isPressing = true;
             virtualCamera.m_Lens.OrthographicSize = 3f;
