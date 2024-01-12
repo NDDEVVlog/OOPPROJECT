@@ -58,7 +58,7 @@ public class FieldOfView : MonoBehaviour
 
                 if (!hit2D)
                 {
-                    Debug.Log(target);
+
 
                     Debug.DrawLine(transform.position, target.position, Color.red, 0.2f);
                     canSeePlayer = true;

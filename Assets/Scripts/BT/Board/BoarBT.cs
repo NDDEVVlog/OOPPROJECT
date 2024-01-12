@@ -25,7 +25,7 @@ public class BoarBT : BehaviorTree.Tree
     void CheckCanSee()
     {   
         
-        Debug.Log("Run");
+
         canSeePlayer = fieldOfView.canSeePlayer;
 
        

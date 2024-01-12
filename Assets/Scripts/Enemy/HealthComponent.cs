@@ -8,8 +8,8 @@ public class HealthComponent : MonoBehaviour
     [SerializeField] protected SimpleFlash flashTrigger;
     //public Animator animator;
 
-    private int maxHealth = 100;
-    private float currentHealth;
+    public float maxHealth = 100;
+    public float currentHealth;
     protected string Name;
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class HealthComponent : MonoBehaviour
     {
         currentHealth -= damage;
         flashTrigger.Flash();
-        Debug.Log("Hit");
+
 
         //animator.SetTrigger("Hurt");
         if (currentHealth <= 0)

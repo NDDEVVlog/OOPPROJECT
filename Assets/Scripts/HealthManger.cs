@@ -10,7 +10,9 @@ public class HealthManger : HealthComponent
 
     public override void TakeDamage(float damage,GameObject DamageCauser)
     {
-        healthBar.fillAmount = healthAmount / 100f;
+        Debug.Log("TakeDamage");
+        base.TakeDamage(damage, DamageCauser);
+        healthBar.fillAmount = currentHealth / maxHealth;
     }
 
     public void Heal(float healingAmount)
