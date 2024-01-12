@@ -12,5 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9beb615ca69a146ab069879da6295b, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: 
-  tileDataSet: []
+  tileDataSet:
+  - tile: {fileID: 0}
+    canBeDestory: 0
+  - tile: {fileID: 0}
+    canBeDestory: 0
+  - tile: {fileID: 0}
+    canBeDestory: 0
+  - tile: {fileID: 0}
+    canBeDestory: 0
+  - tile: {fileID: 0}
+    canBeDestory: 0
+  - tile: {fileID: 0}
+    canBeDestory: 0
   type: 0

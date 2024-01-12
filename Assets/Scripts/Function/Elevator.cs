@@ -4,48 +4,61 @@ using UnityEngine;
 
 public class Elevator : MonoBehaviour
 {
-    public Transform player;
-    public Transform elevatorswitch;
-    public Transform downpos;
-    public Transform upperpos;
-    //public SpriteRenderer elevator;
+    
+    public Transform downPos;
+    public Transform upperPos;
 
     public float speed;
-    bool iselevatordown;
 
-    private void Start()
-    {
+    private bool isElevatorDown;
 
-    }
-
-    void Update()
+    private void Update()
     {
         StartElevator();
     }
+
     void StartElevator()
     {
-        if (Vector2.Distance(player.position, elevatorswitch.position) < 0.5f || Input.GetKeyDown(KeyCode.E))
-           
+
+        if (isElevatorDown)
         {
-            Debug.Log("NguyenDuy");
-            if (transform.position.y <= downpos.position.y)
-            {
-                Debug.Log("Ditconmemaychaydi");
-                iselevatordown = true;
-            }
-            else if (transform.position.y >= upperpos.position.y)
-            {
-                Debug.Log("Taometlamroi");
-                iselevatordown = false;
-            }
-        }
-        if (iselevatordown)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, upperpos.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, upperPos.position, speed * Time.deltaTime);
         }
         else
         {
-            transform.position = Vector2.MoveTowards(transform.position, downpos.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, downPos.position, speed * Time.deltaTime);
         }
+    }
+
+    // Observer Pattern
+    /*public void ObserveInteractable(InteractableHealthComponent interactable)
+    {
+        interactable.OnTakeDamage = ReactToDamage;
+    }*/
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.transform.parent = this.gameObject.transform;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.transform.parent = null;
+        }
+    }
+    public void ReactToDamage()
+    {
+        // You can adjust the threshold as needed
+       
+            ToggleElevatorDirection();
+        
+    }
+
+    private void ToggleElevatorDirection()
+    {
+        isElevatorDown = !isElevatorDown;
     }
 }
