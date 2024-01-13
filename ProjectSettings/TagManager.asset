@@ -8,6 +8,7 @@ TagManager:
   - Character
   - LandingPoint
   - Bird
+  - MainCineCamera
   layers:
   - Default
   - TransparentFX

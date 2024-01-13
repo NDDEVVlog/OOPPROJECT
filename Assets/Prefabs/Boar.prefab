@@ -269,7 +269,7 @@ MonoBehaviour:
   onTakeDamage: 0
   layer:
     serializedVersion: 2
-    m_Bits: 32767
+    m_Bits: 32761
   ai: {fileID: 6786535118923510523}
   canSeePlayer: 0
   fieldOfView: {fileID: 6786535118923510527}
@@ -289,6 +289,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashTrigger: {fileID: 6786535118923510514}
+  maxHealth: 100
+  currentHealth: 0
 --- !u!114 &6786535118923510527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,31 +426,85 @@ MonoBehaviour:
   sound:
     objectAudios:
     - materialType: 0
-      objectSounds: []
+      objectSounds:
+      - audioClip: {fileID: 8300000, guid: 219cac460b9274e48ad62e3469839d33, type: 3}
+        piority: 0
+        volume: 0
       particleSystems: []
     - materialType: 1
-      objectSounds: []
+      objectSounds:
+      - audioClip: {fileID: 8300000, guid: 88b048a343b2c644c982fca73451901b, type: 3}
+        piority: 0
+        volume: 0
       particleSystems: []
     - materialType: 2
-      objectSounds: []
+      objectSounds:
+      - audioClip: {fileID: 8300000, guid: 219cac460b9274e48ad62e3469839d33, type: 3}
+        piority: 0
+        volume: 0
+      - audioClip: {fileID: 8300000, guid: 49a76b64a6728cc40b3be78f2290b6a3, type: 3}
+        piority: 0
+        volume: 0
+      - audioClip: {fileID: 8300000, guid: 6b898baf363cc9f4eb2e06f06a20a8be, type: 3}
+        piority: 0
+        volume: 0
+      - audioClip: {fileID: 8300000, guid: f9c7e2ca0c90bf1468dc88710ba387b6, type: 3}
+        piority: 0
+        volume: 0
       particleSystems: []
     - materialType: 3
-      objectSounds: []
+      objectSounds:
+      - audioClip: {fileID: 8300000, guid: e7435397e5095674f99f5ef3563c680d, type: 3}
+        piority: 0
+        volume: 0
       particleSystems: []
     - materialType: 4
-      objectSounds: []
+      objectSounds:
+      - audioClip: {fileID: 8300000, guid: 33b3a943dae28b94d8aba5186a1da4c1, type: 3}
+        piority: 0
+        volume: 0
       particleSystems: []
     - materialType: 5
-      objectSounds: []
+      objectSounds:
+      - audioClip: {fileID: 8300000, guid: bd0a3d1ecfa57c148bd4090d75fb7f3c, type: 3}
+        piority: 0
+        volume: 0
+      - audioClip: {fileID: 8300000, guid: db3e6bda947920746afb60dd201a4c5c, type: 3}
+        piority: 0
+        volume: 0
+      - audioClip: {fileID: 8300000, guid: 24a6fd2b4320cf947816770c0eac1b45, type: 3}
+        piority: 0
+        volume: 0
+      - audioClip: {fileID: 8300000, guid: 068b2af5b80c3d14c911bab9455a65b1, type: 3}
+        piority: 0
+        volume: 0
       particleSystems: []
     - materialType: 6
-      objectSounds: []
+      objectSounds:
+      - audioClip: {fileID: 8300000, guid: 1a7aba7160126f64787d60e5ad4e0d9c, type: 3}
+        piority: 0
+        volume: 0
+      - audioClip: {fileID: 8300000, guid: 4d76dfd823181554e98c198730b51ee8, type: 3}
+        piority: 0
+        volume: 0
+      - audioClip: {fileID: 8300000, guid: 140d78a3f3440884dbaf2c197cd1b7cc, type: 3}
+        piority: 0
+        volume: 0
+      - audioClip: {fileID: 8300000, guid: d0183d64075d3774083dd23bb9755a9d, type: 3}
+        piority: 0
+        volume: 0
       particleSystems: []
     - materialType: 7
-      objectSounds: []
+      objectSounds:
+      - audioClip: {fileID: 8300000, guid: 5f65b3cda1eaad5478701953f09d0b94, type: 3}
+        piority: 0
+        volume: 0
       particleSystems: []
     - materialType: 8
-      objectSounds: []
+      objectSounds:
+      - audioClip: {fileID: 8300000, guid: 5f65b3cda1eaad5478701953f09d0b94, type: 3}
+        piority: 0
+        volume: 0
       particleSystems: []
     - materialType: 9
       objectSounds: []

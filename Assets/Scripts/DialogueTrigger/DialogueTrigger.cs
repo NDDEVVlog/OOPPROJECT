@@ -7,9 +7,10 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Message[] messages;
     public Actor[] actors;
-
+    public DialogueManager dialogue;
     public void StartDialogue()
     {
+        //dialogue.gameObject.enabled = true;
         FindObjectOfType<DialogueManager>().enabled = true;
         FindObjectOfType<DialogueManager>().OpenDialogue(messages, actors);
     }

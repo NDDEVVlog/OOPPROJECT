@@ -5392,6 +5392,12 @@ MonoBehaviour:
   target: {fileID: 284810920}
   activateDistance: 50
   pathUpdateSeconds: 0.5
+  dijKstraGraph: {fileID: 0}
+  vertexList: []
+  npcVertex: {fileID: 0}
+  endpoint: {fileID: 0}
+  vertexTarget: []
+  verTar: {fileID: 0}
   nextWayPointDistance: 3
   jumpNodeHeightRequirement: 0.8
   jumpModifier: 0.3
@@ -5552,7 +5558,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 32767
 --- !u!114 &265479868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6304,6 +6310,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashTrigger: {fileID: 0}
+  maxHealth: 100
+  currentHealth: 0
   another: {fileID: 21300000, guid: 37ecdea43762791489875454b5822a2e, type: 3}
 --- !u!1001 &483579451
 PrefabInstance:
@@ -7097,6 +7105,7 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 129
+  movement: {fileID: 0}
   ai: {fileID: 713819852}
 --- !u!251 &713819845
 PlatformEffector2D:
@@ -12773,6 +12782,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashTrigger: {fileID: 0}
+  maxHealth: 100
+  currentHealth: 0
 --- !u!114 &1782280920
 MonoBehaviour:
   m_ObjectHideFlags: 0

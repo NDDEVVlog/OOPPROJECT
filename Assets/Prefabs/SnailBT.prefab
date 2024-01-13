@@ -253,7 +253,7 @@ MonoBehaviour:
   onTakeDamage: 0
   layer:
     serializedVersion: 2
-    m_Bits: 32767
+    m_Bits: 32763
   ai: {fileID: 6665370188486007817}
 --- !u!114 &6665370188486007863
 MonoBehaviour:
@@ -282,6 +282,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashTrigger: {fileID: 6665370188486007863}
+  maxHealth: 100
+  currentHealth: 0
   Hide: 0
 --- !u!82 &7863596808410304119
 AudioSource:

@@ -10,11 +10,15 @@ public class CameraSwitchTrigger : MonoBehaviour
     public CinemachineVirtualCamera switchCamera;
     private CinemachineVirtualCamera originalCamera;
 
+    
     private void Start()
     {
-        originalCamera = CinemachineCore.Instance.GetActiveBrain(0).ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>();
-    }
+//        originalCamera = CinemachineCore.Instance.GetActiveBrain(0).ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>();
+        switchCamera = GetComponent<CinemachineVirtualCamera>();
+        originalCamera = GameObject.FindGameObjectWithTag("MainCineCamera").GetComponent<CinemachineVirtualCamera>();
 
+    }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -48,14 +52,14 @@ public class CameraSwitchTrigger : MonoBehaviour
         newCamera.Priority = 10;
 
         // Get the transposer of both cameras
-        CinemachineOrbitalTransposer originalTransposer = originalCamera.GetCinemachineComponent<CinemachineOrbitalTransposer>();
-        CinemachineOrbitalTransposer newTransposer = switchCamera.GetCinemachineComponent<CinemachineOrbitalTransposer>();
+        CinemachineTransposer originalTransposer = originalCamera.GetCinemachineComponent<CinemachineTransposer>();
+        CinemachineTransposer newTransposer = switchCamera.GetCinemachineComponent<CinemachineTransposer>();
 
         // Interpolate between the orbital transposer values
         StartCoroutine(InterpolateOrbitalTransposer(originalTransposer, newTransposer));
     }
 
-    private IEnumerator InterpolateOrbitalTransposer(CinemachineOrbitalTransposer fromTransposer, CinemachineOrbitalTransposer toTransposer)
+    private IEnumerator InterpolateOrbitalTransposer(CinemachineTransposer fromTransposer, CinemachineTransposer toTransposer)
     {
         float elapsedTime = 0f;
         float duration = 1.0f; // Adjust the duration as needed

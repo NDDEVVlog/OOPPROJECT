@@ -149,4 +149,4 @@ MonoBehaviour:
     canBeDestory: 0
   - tile: {fileID: 11400000, guid: f5f9d5b5dce33d3408672924363c9c4e, type: 2}
     canBeDestory: 0
-  type: 0
+  type: 3

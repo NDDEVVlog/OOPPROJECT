@@ -14,10 +14,12 @@ public class DialogueManager : MonoBehaviour
     Message[] currentMessage;
     Actor[] currentActors;
     int activeMessage = 0;
-    public static bool isActive = false;  
-
+    public static bool isActive = false;
+    public GameObject DialogueBox;
     public void OpenDialogue(Message[] messages, Actor[] actors)
     {
+        Debug.Log("Started Loaded messages " + messages.Length);
+        DialogueBox.SetActive(true);
         currentMessage = messages;
         currentActors = actors;
         activeMessage = 0;
@@ -27,7 +29,8 @@ public class DialogueManager : MonoBehaviour
     }
 
     void DisplayMessage()
-    {
+    {   
+
         Message messageToDisplay = currentMessage[activeMessage];
         messageText.text = messageToDisplay.message;
 
@@ -38,7 +41,8 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void NextMessage()
-    {
+    {   
+
         activeMessage++;
         if(activeMessage < currentMessage.Length)
         {
@@ -46,6 +50,8 @@ public class DialogueManager : MonoBehaviour
         } else
         {
             Debug.Log("Conversation ended! ");
+            DialogueBox.SetActive(false);
+
             isActive = false;
         }
     }

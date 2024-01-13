@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Scene/Level/TutorialJungle.unity
     guid: 4b22928ac1c98e94fbf193c044ff4a3f
+  - enabled: 1
+    path: Assets/Scenes/Main Scene/Level/Level Mountain.unity
+    guid: 7b2bea6e64a24a1468f5b57c6a0268de
+  - enabled: 1
+    path: Assets/Scenes/Main Scene/Level/ReverseWaterSavePoint.unity
+    guid: cfde8ddd64af6d547a78c89c085539b2
   m_configObjects: {}
