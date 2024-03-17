@@ -15,6 +15,24 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Scene/Level/Cloud.unity
     guid: 5fa64c8db70ea724db491f38d1cd30af
   - enabled: 1
+    path: Assets/Scenes/Main Scene/Level/DeepForestConnector.unity
+    guid: 26bca6a536d37d445a6db0855b671141
+  - enabled: 1
+    path: Assets/Scenes/Main Scene/Level/Elevator WaterFall.unity
+    guid: af98685143e41744a8c18125e339d779
+  - enabled: 1
+    path: Assets/Scenes/Main Scene/Level/Forrest.unity
+    guid: c54f4f6de3ea396498b26bfdb44b7250
+  - enabled: 1
+    path: Assets/Scenes/Main Scene/Level/Level AnotherSideCliff.unity
+    guid: b58b8ebf92c4b1a46881f5809a221c86
+  - enabled: 1
+    path: Assets/Scenes/Main Scene/Level/Level Cliff.unity
+    guid: 24f8938017c80b54cb0fbc8a476f9fdd
+  - enabled: 1
+    path: Assets/Scenes/Main Scene/Level/To The WaterFall.unity
+    guid: 63e4e6fb97355ed4d80fc64ec599e31b
+  - enabled: 1
     path: Assets/Scenes/Main Scene/Level/ReverseWaterFall.unity
     guid: a0a0189b989a831439284198238d5070
   - enabled: 1
@@ -26,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Scene/Level/ReverseWaterSavePoint.unity
     guid: cfde8ddd64af6d547a78c89c085539b2
+  - enabled: 1
+    path: Assets/Scenes/Main Scene/Level/LevelVillage 1.unity
+    guid: d355a0a69569abd4fa18fe5e0f5528e1
   m_configObjects: {}

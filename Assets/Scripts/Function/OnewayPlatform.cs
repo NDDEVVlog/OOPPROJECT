@@ -26,7 +26,7 @@ public class OnewayPlatform : MonoBehaviour
     private void OnCollisionStay(Collision collision)
     {
 
-        if (collision.gameObject.CompareTag("Character"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             isCharacter = true;
         }
@@ -34,7 +34,7 @@ public class OnewayPlatform : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Get the collider not the parent
-        if (collision.gameObject.CompareTag("Character"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             isCharacter = true;
         }

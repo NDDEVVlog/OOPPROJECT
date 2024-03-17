@@ -14,8 +14,8 @@ public class CameraSwitchTrigger : MonoBehaviour
     private void Start()
     {
 //        originalCamera = CinemachineCore.Instance.GetActiveBrain(0).ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>();
-        switchCamera = GetComponent<CinemachineVirtualCamera>();
-        originalCamera = GameObject.FindGameObjectWithTag("MainCineCamera").GetComponent<CinemachineVirtualCamera>();
+            switchCamera = GetComponent<CinemachineVirtualCamera>();
+            originalCamera = GameObject.FindGameObjectWithTag("MainCineCamera").GetComponent<CinemachineVirtualCamera>();
 
     }
     

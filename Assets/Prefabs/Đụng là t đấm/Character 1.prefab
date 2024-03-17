@@ -25,11 +25,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 917148448395962299, guid: 87a942722f054cf4fb7be668213df7af, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.98
+      value: 2.13
       objectReference: {fileID: 0}
     - target: {fileID: 917148448395962299, guid: 87a942722f054cf4fb7be668213df7af, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.26
+      value: -0.74
       objectReference: {fileID: 0}
     - target: {fileID: 917148448395962299, guid: 87a942722f054cf4fb7be668213df7af, type: 3}
       propertyPath: m_LocalPosition.z
@@ -187,7 +187,13 @@ MonoBehaviour:
       objectSounds: []
       particleSystems: []
     - materialType: 2
-      objectSounds: []
+      objectSounds:
+      - audioClip: {fileID: 8300000, guid: 6b898baf363cc9f4eb2e06f06a20a8be, type: 3}
+        piority: 0
+        volume: 0
+      - audioClip: {fileID: 8300000, guid: f9c7e2ca0c90bf1468dc88710ba387b6, type: 3}
+        piority: 0
+        volume: 0
       particleSystems: []
     - materialType: 3
       objectSounds:
@@ -205,7 +211,13 @@ MonoBehaviour:
       objectSounds: []
       particleSystems: []
     - materialType: 5
-      objectSounds: []
+      objectSounds:
+      - audioClip: {fileID: 8300000, guid: db3e6bda947920746afb60dd201a4c5c, type: 3}
+        piority: 0
+        volume: 0
+      - audioClip: {fileID: 8300000, guid: 24a6fd2b4320cf947816770c0eac1b45, type: 3}
+        piority: 0
+        volume: 0
       particleSystems: []
     - materialType: 6
       objectSounds:
